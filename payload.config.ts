@@ -4,7 +4,11 @@ import { viteBundler } from "@payloadcms/bundler-vite";
 import { buildConfig } from "payload/config";
 import path from "path";
 import Users from "./cms/collections/Users";
-import Media from "./cms/collections/Media";
+import PressPhotos from "./cms/collections/PressPhotos";
+import Shows from "./cms/collections/Shows";
+import Songs from "./cms/collections/Songs";
+import Faq from "./cms/globals/Faq";
+import Info from "./cms/globals/Info";
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "http://localhost:3000",
@@ -26,10 +30,8 @@ export default buildConfig({
       dbName: process.env.MONGO_DBNAME,
     },
   }),
-  collections: [
-    Users,
-    Media,
-  ],
+  collections: [Users, PressPhotos, Shows, Songs],
+  globals: [Faq, Info],
   typescript: {
     outputFile: path.resolve(__dirname, "cms/payload-types.ts"),
   },
