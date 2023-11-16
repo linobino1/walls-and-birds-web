@@ -20,7 +20,10 @@ export default buildConfig({
   },
   editor: lexicalEditor({}),
   db: mongooseAdapter({
-    url: process.env.MONGODB_URI ?? false,
+    url: process.env.MONGO_URL ?? false,
+    connectOptions: {
+      dbName: process.env.MONGO_DBNAME,
+    },
   }),
   collections: [Users],
   typescript: {
