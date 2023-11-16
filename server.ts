@@ -64,6 +64,7 @@ async function start() {
   app.all(
     "*",
     createRequestHandler({
+      // @ts-ignore
       build: vite
         ? () => {
             if (vite) return unstable_loadViteServerBuild(vite);
