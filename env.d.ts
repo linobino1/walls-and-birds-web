@@ -1,8 +1,8 @@
-/// <reference types="@remix-run/node" />
-/// <reference types="vite/client" />
+/// <reference types="@remix-run/dev" />
+/// <reference types="@remix-run/node/globals" />
 
 import type { User } from "payload/generated-types";
-import type { Response, Request, NextFunction } from "express";
+import type { Response } from "express";
 import type { Payload } from "payload";
 import type { ServerBuild } from "@remix-run/node";
 
@@ -26,21 +26,21 @@ interface PayloadRequest extends Express.Request {
 
 type GetLoadContextFunction = (
   req: PayloadRequest,
-  res: Response
+  res: express.Response
 ) => Promise<AppLoadContext> | AppLoadContext;
 type RequestHandler = (
-  req: Request,
-  res: Response,
-  next: NextFunction
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
 ) => Promise<void>;
 
 declare module "@remix-run/express" {
-  export function createRequestHandler({
+  export declare function createRequestHandler({
     build,
     getLoadContext,
     mode,
   }: {
-    build: ServerBuild | (() => Promise<ServerBuild>);
+    build: ServerBuild;
     getLoadContext?: GetLoadContextFunction;
     mode?: string;
   }): RequestHandler;

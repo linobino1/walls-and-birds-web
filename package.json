@@ -2,8 +2,8 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "run-s \"build:*\"",
-    "build:remix": "vite build && vite build --ssr",
+    "build": "run-p \"build:*\"",
+    "build:remix": "remix build",
     "build:payload": "payload build",
     "build:server": "tsc -p tsconfig.server.json",
     "dev": "node -r ts-node/register --watch-path ./server.ts server.ts",
@@ -12,7 +12,7 @@
     "generate:types": "payload generate:types"
   },
   "dependencies": {
-    "@payloadcms/bundler-vite": "0.1.3",
+    "@payloadcms/bundler-webpack": "^1.0.5",
     "@payloadcms/db-mongodb": "^1.0.7",
     "@payloadcms/richtext-lexical": "^0.1.16",
     "@remix-run/dev": "*",
@@ -47,9 +47,7 @@
     "eslint": "^8.52.0",
     "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=18"

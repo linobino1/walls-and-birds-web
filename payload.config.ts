@@ -1,6 +1,6 @@
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { viteBundler } from "@payloadcms/bundler-vite";
+import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { buildConfig } from "payload/config";
 import path from "path";
 import Users from "./cms/collections/Users";
@@ -14,14 +14,7 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "http://localhost:3000",
   admin: {
     user: Users.slug,
-    bundler: viteBundler(),
-    vite: (incomingViteConfig) => ({
-      ...incomingViteConfig,
-      build: {
-        ...incomingViteConfig.build,
-        emptyOutDir: false,
-      },
-    }),
+    bundler: webpackBundler(),
   },
   editor: lexicalEditor({}),
   db: mongooseAdapter({
