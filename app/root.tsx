@@ -8,9 +8,6 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-//css should be imported as an side effect for Vite
-import "./tailwind.css";
-
 export const meta: MetaFunction = () => [
   { title: "Welcome to RePay!" },
   { charSet: "utf-8" },

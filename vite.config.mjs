@@ -9,8 +9,6 @@ export default defineConfig({
   plugins: [
     remix({
       ignoredRouteFiles: ["**/.*"],
-      tailwind: true,
-      postcss: true,
       // appDirectory: "app",
       // assetsBuildDirectory: "public/build",
       // publicPath: "/build/",
