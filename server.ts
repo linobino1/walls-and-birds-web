@@ -64,12 +64,12 @@ async function start() {
   app.all(
     "*",
     createRequestHandler({
-      // @ts-ignore
       build: vite
         ? () => {
             if (vite) return unstable_loadViteServerBuild(vite);
           }
-        : await import("./build/index.js"),
+        : // @ts-ignore
+          await import("./build/index.js"),
       getLoadContext(req, res) {
         return {
           payload: req.payload,
