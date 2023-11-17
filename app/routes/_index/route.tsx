@@ -125,8 +125,12 @@ export default function Index() {
       <Shows shows={shows} className={classes.shows} />
       <hr />
       <a href="mailto:judy@wallsandbirds.com">contact</a>
-      <Link to="/faq">faq</Link>
-      <Link to="/songbook">songbook</Link>
+      <Link prefetch="intent" to="/faq">
+        faq
+      </Link>
+      <Link prefetch="intent" to="/songbook">
+        songbook
+      </Link>
       <iframe
         title="firetruck"
         className={classes.old}
