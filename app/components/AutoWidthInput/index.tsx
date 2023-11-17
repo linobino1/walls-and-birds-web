@@ -1,5 +1,5 @@
 import type { ChangeEvent } from "react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import classes from "./index.module.css";
 
 export const AutoWidthInput: React.FC<
@@ -8,18 +8,18 @@ export const AutoWidthInput: React.FC<
   const [content, setContent] = useState(props.placeholder || "");
   const [width, setWidth] = useState(0);
   const span = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (span.current) {
-      const newWidth = span.current.offsetWidth;
-      if (newWidth > width) {
-        setWidth(newWidth);
-      }
-    }
-  }, [content, width]);
+  const input = useRef<HTMLInputElement>(null);
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setContent(e.target.value);
+
+    if (!span.current || !input.current) return;
+
+    const newWidth = span.current.offsetWidth;
+    if (newWidth > width) {
+      setWidth(newWidth);
+    }
+    input.current.style.visibility = "visible";
   };
 
   return (
@@ -36,9 +36,9 @@ export const AutoWidthInput: React.FC<
         {content}
       </span>
       <input
+        ref={input}
         {...props}
-        style={{ width: width === 0 ? "auto" : width }}
-        className={classes.input}
+        style={{ width: `${width === 0 ? 96 : width}px` }}
         onChange={changeHandler}
       />
     </div>
