@@ -10,11 +10,6 @@
     url("/fonts/courier-new.woff") format("woff"),
     url("/fonts/courier-new.ttf") format("truetype");
 }
-:root {
-  --color-fg: white;
-  --color-bg: black;
-  --color-font-light: #bbb;
-}
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -24,8 +19,6 @@ body {
   font-family: "Helvetica", sans-serif;
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-normal);
-  background-color: var(--color-bg);
-  color: var(--color-fg);
   margin: 0;
   padding: 0;
   overflow-x: hidden;

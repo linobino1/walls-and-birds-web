@@ -1,0 +1,24 @@
+.container[data-layout-type="white"] {
+  background-color: white;
+  color: black;
+}
+.container[data-layout-type="black"] {
+  background-color: black;
+  color: white;
+}
+
+.container footer {
+  position: relative;
+  text-align: left;
+  z-index: 1;
+  padding: 0.5rem;
+  padding-top: 4rem;
+  color: var(--color-font-light);
+}
+
+.container footer a:visited,
+.container footer a:active,
+.container footer a {
+  color: inherit;
+  opacity: 0.5;
+}

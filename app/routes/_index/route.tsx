@@ -10,6 +10,7 @@ import { json } from "@remix-run/server-runtime";
 import classes from "./index.module.css";
 import { Shows } from "~/components/Shows";
 import { AutoWidthInput } from "~/components/AutoWidthInput";
+import Layout from "~/components/Layout";
 
 export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   const shows = await payload.find({
@@ -66,7 +67,7 @@ export default function Index() {
       : "idle";
 
   return (
-    <main className={classes.container}>
+    <Layout className={classes.container}>
       <h1>Walls & Birds</h1>
       <a
         href="https://wallsandbirds.bandcamp.com"
@@ -133,6 +134,6 @@ export default function Index() {
         width="300px"
         height="400px"
       />
-    </main>
+    </Layout>
   );
 }

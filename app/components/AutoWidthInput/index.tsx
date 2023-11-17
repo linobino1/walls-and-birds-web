@@ -12,7 +12,6 @@ export const AutoWidthInput: React.FC<
   useEffect(() => {
     if (span.current) {
       const newWidth = span.current.offsetWidth;
-      console.log("newWidth", newWidth, width);
       if (newWidth > width) {
         setWidth(newWidth);
       }
