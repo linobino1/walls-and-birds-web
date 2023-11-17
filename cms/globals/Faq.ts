@@ -15,6 +15,7 @@ const Faq: GlobalConfig = {
           type: "text",
         },
       ],
+      required: true,
     },
   ],
 };
