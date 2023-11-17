@@ -1,6 +1,5 @@
 import type { ChangeEvent } from "react";
 import React, { useRef, useState } from "react";
-import classes from "./index.module.css";
 
 export const AutoWidthInput: React.FC<
   React.InputHTMLAttributes<HTMLInputElement>
@@ -23,7 +22,7 @@ export const AutoWidthInput: React.FC<
   };
 
   return (
-    <div className={classes.container}>
+    <div>
       <span
         ref={span}
         style={{
