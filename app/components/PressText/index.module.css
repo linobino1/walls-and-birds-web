@@ -1,0 +1,48 @@
+.container p {
+  margin-bottom: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  transition: border-color 0.2s;
+}
+.bar {
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: small;
+  line-height: 0.4;
+  color: lightgrey;
+  margin-block-end: 1em;
+}
+.bar > * {
+  padding: 0.5rem;
+}
+.container:hover p {
+  border-color: lightgrey;
+}
+.container:hover .bar,
+.container.highlight .bar {
+  opacity: 1;
+}
+.container.highlight p {
+  border-color: green;
+}
+.container button {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+.container button::before {
+  content: "✅ ";
+  visibility: hidden;
+}
+.container button.done::before {
+  visibility: visible;
+}

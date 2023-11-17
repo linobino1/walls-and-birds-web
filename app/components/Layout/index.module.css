@@ -7,6 +7,10 @@
   color: white;
 }
 
+.container main {
+  min-height: 100vh;
+}
+
 .container footer {
   position: relative;
   text-align: left;

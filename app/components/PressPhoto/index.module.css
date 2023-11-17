@@ -1,0 +1,35 @@
+.container {
+  margin-block-end: 1rem;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bar {
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: small;
+  line-height: 0.4;
+  color: lightgrey;
+  margin-block-end: 1em;
+}
+.bar > * {
+  padding: 0.5rem;
+}
+.container:hover .bar {
+  opacity: 1;
+}
+.bar a:hover,
+.bar a {
+  color: blue;
+}
+.bar a:visited {
+  color: purple;
+}
