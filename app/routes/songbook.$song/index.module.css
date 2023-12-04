@@ -15,9 +15,8 @@
   font-weight: bold;
 }
 .content {
-  white-space: pre;
+  white-space: pre-wrap;
   line-height: 130%;
-  text-wrap: wrap;
 }
 .container button {
   appearance: none;
@@ -25,4 +24,10 @@
   outline: none;
   background: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    letter-spacing: -1px;
+  }
 }
