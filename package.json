@@ -13,6 +13,7 @@
     "generate:types": "payload generate:types"
   },
   "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^1.9.2",
     "@payloadcms/bundler-webpack": "^1.0.5",
     "@payloadcms/db-mongodb": "^1.0.7",
     "@payloadcms/richtext-lexical": "^0.1.16",

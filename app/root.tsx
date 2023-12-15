@@ -1,4 +1,9 @@
-import type { MetaFunction, LinksFunction } from "@remix-run/node";
+import {
+  type MetaFunction,
+  type LinksFunction,
+  json,
+  type LoaderFunction,
+} from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -6,6 +11,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import classes from "./root.module.css";
@@ -21,12 +27,26 @@ export const meta: MetaFunction = () => [
   { name: "viewport", content: "width=device-width, initial-scale=1" },
 ];
 
+export const loader: LoaderFunction = async () => {
+  return json({
+    publicKeys: {
+      HCAPTCHA_SITE_KEY: process.env.HCAPTCHA_SITE_KEY,
+    },
+  });
+};
+
 export default function App() {
+  const { publicKeys } = useLoaderData<typeof loader>();
   return (
     <html lang="en" className={classes.load}>
       <head>
         <Meta />
         <Links />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.env = ${JSON.stringify(publicKeys)}`,
+          }}
+        />
       </head>
       <body>
         <Outlet />

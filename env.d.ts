@@ -45,3 +45,17 @@ declare module "@remix-run/express" {
     mode?: string;
   }): RequestHandler;
 }
+
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      NODE_ENV: "development" | "production";
+      HCAPTCHA_SITE_KEY: string;
+      HCAPTCHA_SECRET_KEY: string;
+    }
+  }
+
+  var env: {
+    HCAPTCHA_SITE_KEY: string;
+  };
+}

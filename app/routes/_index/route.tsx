@@ -9,8 +9,9 @@ import {
 import { json } from "@remix-run/server-runtime";
 import classes from "./index.module.css";
 import { Shows } from "~/components/Shows";
-import { AutoWidthInput } from "~/components/AutoWidthInput";
 import Layout from "~/components/Layout";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useEffect, useRef, useState } from "react";
 
 export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   const shows = await payload.find({
@@ -25,8 +26,42 @@ export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   return json({ shows }, { status: 200 });
 };
 
+const validateCaptcha = async (token: string): Promise<boolean> => {
+  if (process.env.NODE_ENV === "development") {
+    console.log("Captcha validation skipped in development mode");
+    return true;
+  }
+  try {
+    const res = await fetch("https://hcaptcha.com/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret: process.env.HCAPTCHA_SECRET_KEY,
+        sitekey: process.env.HCAPTCHA_SITE_KEY,
+        response: token,
+      }),
+    });
+    const data = await res.json();
+    return !!data.success;
+  } catch (error) {
+    return false;
+  }
+};
+
 export const action: ActionFunction = async ({ context, request }) => {
-  const email = (await request.formData()).get("email");
+  const data = await request.formData();
+
+  // validate captcha
+  if (!(await validateCaptcha(data.get("h-captcha-response") as string))) {
+    return json({
+      error: true,
+      message: `Please confirm the captcha.`,
+    });
+  }
+
+  const email = data.get("email");
 
   let res = await fetch(`${process.env.LISTMONK_API}/public/subscription`, {
     method: "post",
@@ -65,6 +100,23 @@ export default function Index() {
       : actionData?.message
       ? "success"
       : "idle";
+  const [isActive, setIsActive] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state === "success") {
+      form.current?.reset();
+      isActive && setIsActive(false);
+    }
+  }, [state, isActive]);
+
+  useEffect(() => {
+    document.body.onclick = (e) => {
+      if (!form.current?.contains(e.target as Node)) {
+        setIsActive(false);
+      }
+    };
+  }, [isActive]);
 
   return (
     <Layout className={classes.container}>
@@ -91,29 +143,58 @@ export default function Index() {
         outtakes
       </a>
 
-      <div className={classes.newsletter}>
+      <div
+        className={`${classes.newsletter} ${isActive ? classes.active : ""}`}
+      >
         <Form
+          ref={form}
           method="post"
           aria-hidden={state === "success"}
           className={state === "loading" ? classes.loading : ""}
         >
           <h2>newsletter:</h2>
           <fieldset disabled={state === "loading"}>
-            <AutoWidthInput
+            <input
               id="email"
               name="email"
               type="email"
               placeholder="email*"
               aria-label="your email address"
+              required={true}
+              onFocus={() => setIsActive(true)}
             />
-            <button type="submit" aria-label="sign up for our newsletter">
+            <button
+              className={classes.inlineSubmit}
+              type="submit"
+              aria-label="sign up for our newsletter"
+            >
               &crarr;
             </button>
           </fieldset>
+          <div
+            className={classes.captcha}
+            style={{ display: isActive ? "block" : "none" }}
+          >
+            <HCaptcha
+              sitekey={
+                (typeof process !== "undefined" ? process : window).env
+                  .HCAPTCHA_SITE_KEY
+              }
+            />
+            <p className={classes.error} aria-hidden={state !== "error"}>
+              {actionData?.message ||
+                "We couldn't sign you up. Please try again."}
+              <button onClick={() => setIsActive(false)}>ok</button>
+            </p>
+            <button
+              className={classes.submit}
+              type="submit"
+              aria-label="sign up for our newsletter"
+            >
+              sign me up
+            </button>
+          </div>
         </Form>
-        <p className={classes.error} aria-hidden={state !== "error"}>
-          {actionData?.message || "We couldn't sign you up. Please try again."}
-        </p>
         <p className={classes.success} aria-hidden={state !== "success"}>
           {actionData?.message}
         </p>
