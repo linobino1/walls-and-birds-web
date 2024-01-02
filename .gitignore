@@ -1,5 +1,8 @@
 node_modules
 
+# vite
+vite.config.mjs.timestamp*
+
 /.cache
 /build
 /dist
