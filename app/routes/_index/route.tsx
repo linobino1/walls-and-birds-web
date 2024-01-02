@@ -14,15 +14,16 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { useEffect, useRef, useState } from "react";
 
 export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
+  // today, 00:00:00
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   const shows = await payload.find({
     collection: "shows",
     sort: "-date",
     where: {
       date: {
-        greater_than_equal: yesterday,
+        greater_than_equal: today,
       },
     },
   });
