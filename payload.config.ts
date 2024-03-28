@@ -39,6 +39,10 @@ export default buildConfig({
       enabled: process.env.S3_ENABLED === "true",
       collections: {
         pressPhotos: {
+          disablePayloadAccessControl: true,
+          generateFileURL: (file) => {
+            return `${process.env.MEDIA_URL}/press-photos/${file.filename}`;
+          },
           prefix: "press-photos/",
           adapter: s3Adapter({
             bucket: process.env.S3_BUCKET || "",
