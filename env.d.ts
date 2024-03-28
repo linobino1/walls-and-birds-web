@@ -48,7 +48,6 @@ declare module "@remix-run/express" {
 
 declare global {
   interface BrowserEnvironment {
-    PAYLOAD_PUBLIC_SERVER_URL: string;
     HCAPTCHA_SITE_KEY: string;
     USE_CLOUDFLARE_IMAGE_TRANSFORMATIONS: string;
     CDN_CGI_IMAGE_URL: string;

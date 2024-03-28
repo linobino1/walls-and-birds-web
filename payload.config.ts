@@ -13,7 +13,6 @@ import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
 import { s3Adapter } from "@payloadcms/plugin-cloud-storage/s3";
 
 export default buildConfig({
-  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "http://localhost:3000",
   admin: {
     user: Users.slug,
     bundler: viteBundler(),
