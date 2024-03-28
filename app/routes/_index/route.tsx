@@ -1,12 +1,12 @@
 import type { ActionFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
+  json,
   Form,
   Link,
   useActionData,
   useLoaderData,
   useNavigation,
 } from "@remix-run/react";
-import { json } from "@remix-run/server-runtime";
 import classes from "./index.module.css";
 import { Shows } from "~/components/Shows";
 import Layout from "~/components/Layout";

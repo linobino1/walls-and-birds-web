@@ -1,29 +1,21 @@
-FROM node:18-bookworm-slim as base
+FROM node:18-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
+WORKDIR /app
 
-ARG PAYLOAD_PUBLIC_SERVER_URL
-ENV PAYLOAD_PUBLIC_SERVER_URL=${PAYLOAD_PUBLIC_SERVER_URL}
+FROM base AS prod-deps
+RUN pnpm install --prod --frozen-lockfile
 
-FROM base as builder
+FROM base AS build
+RUN pnpm install --prod false --frozen-lockfile
+RUN pnpm run build
 
-WORKDIR /home/node
-COPY package*.json ./
+FROM base
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/dist /app/dist
+COPY --from=build /app/build /app/build
 
-COPY . .
-RUN yarn install
-RUN yarn build
-
-FROM base as runtime
-
-ENV NODE_ENV=production
-
-WORKDIR /home/node
-COPY package*.json  ./
-
-RUN yarn install --production
-COPY --from=builder /home/node/public ./public
-COPY --from=builder /home/node/dist ./dist
-COPY --from=builder /home/node/build ./build
-
-EXPOSE 4040
-
-CMD ["yarn", "run", "start"]
+EXPOSE 3000
+CMD [ "pnpm", "start" ]
