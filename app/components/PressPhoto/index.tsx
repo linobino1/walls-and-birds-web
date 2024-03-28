@@ -3,7 +3,7 @@ import Image from "../Image";
 import classes from "./index.module.css";
 import type { PressPhoto as PressPhotoType } from "payload/generated-types";
 
-const sizes = [480, 640, 960, 1280, 1920, 2560];
+const sizes = [1280, 1920, 2560];
 
 export interface Props extends React.HtmlHTMLAttributes<HTMLDivElement> {
   image: PressPhotoType;
@@ -38,7 +38,10 @@ export const PressPhoto: React.FC<Props> = ({ image }) => {
           return (
             <a
               key={size}
-              href={getOptimizedImageUrl(image.url ?? "test", { width: size })}
+              href={getOptimizedImageUrl(image.url ?? "test", {
+                width: size,
+                quality: 100,
+              })}
               download={formatFileName(image, size)}
               target="_blank"
               rel="noopener noreferrer"
