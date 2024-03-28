@@ -26,9 +26,6 @@ export default buildConfig({
   editor: lexicalEditor({}),
   db: mongooseAdapter({
     url: process.env.MONGO_URL ?? false,
-    connectOptions: {
-      dbName: process.env.MONGO_DBNAME,
-    },
   }),
   collections: [Users, PressPhotos, Shows, Songs],
   globals: [Faq, Info],
