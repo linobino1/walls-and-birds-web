@@ -43,7 +43,7 @@ export default function App() {
         <Links />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.env = ${JSON.stringify(publicKeys)}`,
+            __html: `window.ENV = ${JSON.stringify(publicKeys)}`,
           }}
         />
       </head>

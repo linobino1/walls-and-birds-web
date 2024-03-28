@@ -12,6 +12,7 @@ import { Shows } from "~/components/Shows";
 import Layout from "~/components/Layout";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { useEffect, useRef, useState } from "react";
+import environment from "~/util/environment";
 
 export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   // today, 00:00:00
@@ -179,12 +180,7 @@ export default function Index() {
             className={classes.captcha}
             style={{ display: isActive ? "block" : "none" }}
           >
-            <HCaptcha
-              sitekey={
-                (typeof process !== "undefined" ? process : window).env
-                  .HCAPTCHA_SITE_KEY
-              }
-            />
+            <HCaptcha sitekey={environment().HCAPTCHA_SITE_KEY} />
             <p className={classes.error} aria-hidden={state !== "error"}>
               {actionData?.message ||
                 "We couldn't sign you up. Please try again."}
