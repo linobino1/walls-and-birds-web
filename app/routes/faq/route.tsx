@@ -7,7 +7,31 @@ export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   const faq = await payload.findGlobal({
     slug: "faq",
   });
-  return json({ faq }, { status: 200 });
+
+  // shuffle the questions
+  const { questions } = faq;
+  function shuffle(array: Array<any>) {
+    let currentIndex = array.length;
+    while (currentIndex != 0) {
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+  }
+  shuffle(questions);
+
+  return json(
+    {
+      faq: {
+        ...faq,
+        questions,
+      },
+    },
+    { status: 200 }
+  );
 };
 
 export default function Faq() {
