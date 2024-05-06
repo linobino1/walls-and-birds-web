@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { NavLink } from "@remix-run/react";
 import classes from "./index.module.css";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -12,7 +12,10 @@ export const Layout: React.FC<Props> = ({ type, children, ...props }) => {
       <main {...props}>{children}</main>
       {!props.noFooter && (
         <footer>
-          <Link to="/legal">legal notice</Link>
+          <NavLink to="/legal">legal notice</NavLink>
+          <NavLink to="/faq" prefetch="intent">
+            faq
+          </NavLink>
         </footer>
       )}
     </div>

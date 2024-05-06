@@ -2,7 +2,7 @@ import type { ActionFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   json,
   Form,
-  Link,
+  NavLink,
   useActionData,
   useLoaderData,
   useNavigation,
@@ -81,7 +81,7 @@ export const action: ActionFunction = async ({ context, request }) => {
 
   if (res.ok) {
     return json({
-      message: `Thanks for signing up! Check your email for a confirmation link.`,
+      message: `Thanks for signing up! Check your email for a confirmation NavLink.`,
       original_response: res.json(),
     });
   } else {
@@ -206,12 +206,9 @@ export default function Index() {
       <Shows shows={shows} className={classes.shows} />
       <hr />
       <a href="mailto:judy@wallsandbirds.com">contact</a>
-      <Link prefetch="intent" to="/faq">
-        faq
-      </Link>
-      <Link prefetch="intent" to="/songbook">
+      <NavLink prefetch="intent" to="/songbook">
         songbook
-      </Link>
+      </NavLink>
       <iframe
         title="firetruck"
         className={classes.old}

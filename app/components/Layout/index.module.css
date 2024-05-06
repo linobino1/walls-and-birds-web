@@ -18,6 +18,8 @@
   padding: 0.5rem;
   padding-top: 4rem;
   color: var(--color-font-light);
+  display: flex;
+  gap: 1rem;
 }
 
 .container footer a:visited,
