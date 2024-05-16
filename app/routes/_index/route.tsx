@@ -81,7 +81,7 @@ export const action: ActionFunction = async ({ context, request }) => {
 
   if (res.ok) {
     return json({
-      message: `Thanks for signing up! Check your email for a confirmation NavLink.`,
+      message: `Thanks for signing up! Check your inbox/spam for an email with the confirmation link.`,
       original_response: res.json(),
     });
   } else {
