@@ -21,7 +21,7 @@ export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
 
   const shows = await payload.find({
     collection: "shows",
-    sort: "-date",
+    sort: "date",
     where: {
       date: {
         greater_than_equal: today,
