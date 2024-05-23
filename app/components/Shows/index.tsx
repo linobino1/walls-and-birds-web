@@ -20,9 +20,9 @@ export const Shows: React.FC<Props> = ({ shows, ...props }) => (
 );
 
 const ShowComponent: React.FC<{ show: Show }> = ({ show }) => {
-  const label = `${format(new Date(show.date), "PP", { locale: enUS })} | ${
-    show.location
-  }`;
+  const label = `${format(new Date(show.date), "PPP", {
+    locale: enUS,
+  })} | ${show.location}`;
   return (
     <li>
       {show.link ? (
