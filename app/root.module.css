@@ -16,7 +16,8 @@
 }
 html,
 body {
-  font-family: "Helvetica", sans-serif;
+  font-family: "Helvetica", "Segoe UI Symbol", "Apple Symbols",
+    "Noto Sans Symbols 2", sans-serif;
   background-color: black;
   color: white;
 }

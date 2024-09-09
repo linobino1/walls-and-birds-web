@@ -8,25 +8,26 @@
   justify-content: center;
   min-height: 100vh;
   row-gap: 1rem;
-  font-size: 2rem;
-  font-size: 2rem;
-  padding-top: 4rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 .spacer {
   height: 10rem;
 }
 .container h1 {
+  margin-block: 5rem 3rem;
   font-size: 6rem;
   font-family: "Cooper", serif;
   cursor: none;
 }
 .container h2 {
-  font-size: inherit;
+  font-size: 1.8rem;
   font-weight: normal;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   margin: 0;
-  margin-bottom: 0.5em;
+}
+.container h2.tour {
+  margin-bottom: 0.4em;
 }
 .container hr {
   width: 0;
@@ -120,7 +121,7 @@ iframe.old {
   height: 100%;
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
-  z-index: 0;
+  z-index: 1;
 }
 .newsletter.active > form {
   position: relative;
@@ -194,6 +195,7 @@ iframe.old {
 .newsletter input[name="email"],
 .newsletter button {
   margin: 0;
+  padding: 0;
   border: 0;
   height: 2.6rem;
   background: transparent;
@@ -204,7 +206,8 @@ iframe.old {
   color: inherit;
 }
 .newsletter input[name="email"] {
-  width: 4em;
+  width: 6.5em;
+  color: grey;
 }
 .newsletter.active input[name="email"] {
   width: 12em;
@@ -232,4 +235,28 @@ iframe.old {
   padding: 0.5em 1em;
   height: auto;
   background-color: lightseagreen;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    font-size: 1.3rem;
+    row-gap: 0.2rem;
+  }
+  .container h1 {
+    font-size: 2.5rem;
+  }
+  .container h2 {
+    font-size: 1.5rem;
+  }
+  .container hr {
+    margin: 1.5rem 0;
+  }
 }

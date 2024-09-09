@@ -13,6 +13,7 @@ import Layout from "~/components/Layout";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { useEffect, useRef, useState } from "react";
 import environment from "~/util/environment";
+import SocialIcons from "~/components/SocialIcons";
 
 export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   // today, 00:00:00
@@ -126,28 +127,11 @@ export default function Index() {
   return (
     <Layout className={classes.container}>
       <h1>Walls & Birds</h1>
-      <a
-        href="https://wallsandbirds.bandcamp.com"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        albums
-      </a>
-      <a
-        href="https://www.youtube.com/@wallsandbirds"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        music videos
-      </a>
-      <a
-        href="https://soundcloud.com/wallsandbirds"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        outtakes
-      </a>
+      <h2 className={classes.tour}>tour dates</h2>
+      <Shows shows={shows} className={classes.shows} />
 
+      <hr />
+      <h2>email newsletter</h2>
       <div
         className={`${classes.newsletter} ${isActive ? classes.active : ""}`}
       >
@@ -157,13 +141,12 @@ export default function Index() {
           aria-hidden={state === "success"}
           className={state === "loading" ? classes.loading : ""}
         >
-          <h2>newsletter:</h2>
           <fieldset disabled={state === "loading"}>
             <input
               id="email"
               name="email"
               type="email"
-              placeholder="email*"
+              placeholder="sign@me.up"
               aria-label="your email address"
               required={true}
               onFocus={() => setIsActive(true)}
@@ -201,21 +184,25 @@ export default function Index() {
       </div>
 
       <hr />
-
-      <h2>live</h2>
-      <Shows shows={shows} className={classes.shows} />
+      <a
+        href="https://wallsandbirds.bandcamp.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h2>shop ↗</h2>
+      </a>
       <hr />
-      <a href="mailto:judy@wallsandbirds.com">contact</a>
-      <NavLink prefetch="intent" to="/songbook">
-        songbook
-      </NavLink>
-      <iframe
-        title="firetruck"
-        className={classes.old}
-        src="https://firetruck.wallsandbirds.com"
-        width="300px"
-        height="400px"
-      />
+      <SocialIcons />
+      <hr />
+      <nav className={classes.nav}>
+        <a href="mailto:judy@wallsandbirds.com">contact</a>
+        <NavLink to="/faq" prefetch="intent">
+          faq
+        </NavLink>
+        <NavLink prefetch="intent" to="/songbook">
+          songbook
+        </NavLink>
+      </nav>
     </Layout>
   );
 }

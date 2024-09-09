@@ -13,9 +13,6 @@ export const Layout: React.FC<Props> = ({ type, children, ...props }) => {
       {!props.noFooter && (
         <footer>
           <NavLink to="/legal">legal notice</NavLink>
-          <NavLink to="/faq" prefetch="intent">
-            faq
-          </NavLink>
         </footer>
       )}
     </div>

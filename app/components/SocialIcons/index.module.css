@@ -1,0 +1,41 @@
+ul.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+}
+ul.list li {
+  margin: 0;
+  padding: 0;
+}
+ul.list li img {
+  height: auto;
+  width: 1.5em;
+  color: red;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+ul.list li:hover img {
+  opacity: 1;
+}
+ul.list li img[data-name="soundcloud"] {
+  filter: invert();
+  width: 1.5em;
+  transform: translateY(-0.1em);
+}
+ul.list li.wrapHere {
+  flex-basis: 100%;
+  width: 0;
+}
+@media screen and (min-width: 768px) {
+  ul.list li img {
+    transform: scale(0.9);
+  }
+  ul.list li.wrapHere {
+    display: none;
+  }
+}

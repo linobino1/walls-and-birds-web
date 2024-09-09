@@ -4,6 +4,7 @@ import { Link } from "@remix-run/react";
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
 import React from "react";
+import classes from "./index.module.css";
 
 export interface Props extends React.HTMLAttributes<HTMLUListElement> {
   shows: PaginatedDocs<Show>;
@@ -24,7 +25,7 @@ const ShowComponent: React.FC<{ show: Show }> = ({ show }) => {
     locale: enUS,
   })} | ${show.location}`;
   return (
-    <li>
+    <li className={classes.item}>
       {show.link ? (
         <Link target="_blank" rel="noopener noreferrer" to={show.link}>
           {label}
