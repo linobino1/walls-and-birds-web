@@ -13,13 +13,18 @@
 
 .container footer {
   position: relative;
-  text-align: left;
   z-index: 1;
   padding: 1rem;
   padding-top: 4rem;
   color: #aaa;
   display: flex;
+  width: 100%;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  .container[data-layout-center="true"] footer {
+    justify-content: center;
+  }
 }
 
 .container footer a:visited,

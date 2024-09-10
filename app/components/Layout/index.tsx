@@ -1,4 +1,4 @@
-import { NavLink } from "@remix-run/react";
+import { NavLink, useLocation } from "@remix-run/react";
 import classes from "./index.module.css";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -6,18 +6,29 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   noFooter?: boolean;
 }
 
-export const Layout: React.FC<Props> = ({ type, children, ...props }) => {
+export const Layout: React.FC<Props> = ({
+  type = "black",
+  children,
+  ...props
+}) => {
+  const { pathname } = useLocation();
   return (
-    <div className={classes.container} data-layout-type={type ?? "black"}>
+    <div
+      className={classes.container}
+      data-layout-type={type ?? "black"}
+      data-layout-center={pathname === "/"}
+    >
       <main {...props}>{children}</main>
       {!props.noFooter && (
         <footer>
           <NavLink prefetch="intent" to="/legal">
             legal notice
           </NavLink>
-          <NavLink prefetch="intent" to="/past-shows">
-            past shows
-          </NavLink>
+          {pathname === "/" && (
+            <NavLink prefetch="intent" to="/past-shows">
+              past shows
+            </NavLink>
+          )}
         </footer>
       )}
     </div>
