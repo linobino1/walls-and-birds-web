@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  row-gap: 1rem;
+  transition: color 4s;
+  padding-top: 4rem;
+  max-width: min(90vw, 800px);
+  margin: 0 auto;
+  font-size: 120%;
+}
+.container h1 {
+  font-size: 6rem;
+  font-family: "Cooper", serif;
+  text-align: center;
+}
+.container a:visited,
+.container a:hover,
+.container a:active,
+.container a {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.container a:hover {
+  text-decoration: underline;
+}
+.container ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+.clickable:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.photo {
+  margin-block-end: 1rem;
+}
+@media (max-width: 768px) {
+  .container {
+    font-size: 110%;
+  }
+  .container h1 {
+    font-size: 12vw;
+    font-size: min(4rem, 12vw);
+  }
+}

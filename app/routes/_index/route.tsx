@@ -199,6 +199,9 @@ export default function Index() {
         <NavLink to="/faq" prefetch="intent">
           faq
         </NavLink>
+        <NavLink prefetch="intent" to="/past-shows">
+          past shows
+        </NavLink>
         <NavLink prefetch="intent" to="/songbook">
           songbook
         </NavLink>
