@@ -184,13 +184,15 @@ export default function Index() {
       </div>
 
       <hr />
-      <a
-        href="https://wallsandbirds.bandcamp.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2>shop ↗</h2>
-      </a>
+      <h2>
+        <a
+          href="https://wallsandbirds.bandcamp.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          shop ↗
+        </a>
+      </h2>
       <hr />
       <SocialIcons />
       <hr />
@@ -198,9 +200,6 @@ export default function Index() {
         <a href="mailto:judy@wallsandbirds.com">contact</a>
         <NavLink to="/faq" prefetch="intent">
           faq
-        </NavLink>
-        <NavLink prefetch="intent" to="/past-shows">
-          past shows
         </NavLink>
         <NavLink prefetch="intent" to="/songbook">
           songbook
