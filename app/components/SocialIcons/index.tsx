@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./index.module.css";
 
 const items = [
@@ -41,14 +42,14 @@ const SocialIcons = () => {
   return (
     <ul className={classes.list}>
       {items.map((item, index) => (
-        <>
-          <li key={index}>
+        <React.Fragment key={index}>
+          <li>
             <a href={item.url} target="_blank" rel="noopener noreferrer">
               <img src={item.icon} alt={item.name} data-name={item.name} />
             </a>
           </li>
           {index === 2 && <li className={classes.wrapHere} />}
-        </>
+        </React.Fragment>
       ))}
     </ul>
   );
