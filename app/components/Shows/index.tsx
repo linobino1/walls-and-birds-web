@@ -15,7 +15,7 @@ export const Shows: React.FC<Props> = ({ shows, ...props }) => (
     {shows.totalDocs > 0 ? (
       shows.docs.map((show, i) => <ShowComponent key={i} show={show} />)
     ) : (
-      <li>no upcoming shows</li>
+      <li className={classes.empty}>no upcoming shows</li>
     )}
   </ul>
 );
