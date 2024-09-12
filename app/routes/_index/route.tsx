@@ -67,7 +67,11 @@ export const action: ActionFunction = async ({ context, request }) => {
     });
   }
 
-  const email = data.get("email");
+  // wake listmonk up, otherwise the first request will fail
+  await fetch(`${process.env.LISTMONK_API}`, {
+    method: "head",
+  });
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
   let res = await fetch(`${process.env.LISTMONK_API}/public/subscription`, {
     method: "post",
@@ -75,7 +79,7 @@ export const action: ActionFunction = async ({ context, request }) => {
       "Content-Type": "application/json; charset=utf-8",
     },
     body: JSON.stringify({
-      email,
+      email: data.get("email"),
       list_uuids: [process.env.LISTMONK_LIST_ID],
     }),
   });
