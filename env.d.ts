@@ -62,6 +62,7 @@ declare global {
     S3_ACCESS_KEY: string;
     S3_SECRET_KEY: string;
     MEDIA_URL: string;
+    LISTMONK_URL: string;
   }
   interface Window {
     ENV: BrowserEnvironment;

@@ -11,6 +11,7 @@ const NewsletterSignup = () => {
   const [captchaState, setCaptchaState] = useState<
     "checking" | "verified" | "error"
   >("checking");
+  const [triggeredWakeUp, setTriggeredWakeUp] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -19,6 +20,15 @@ const NewsletterSignup = () => {
       isActive && setIsActive(false);
     }
   }, [fetcher.data, isActive]);
+
+  // wake up listmonk when the user interacts with the form
+  useEffect(() => {
+    if (!triggeredWakeUp && isActive) {
+      fetch("/listmonk-wakeup", { method: "post" });
+      setTriggeredWakeUp(true);
+    }
+  }, [isActive]);
+
   return (
     <div className={`${classes.container} ${isActive ? classes.active : ""}`}>
       {isActive && (
