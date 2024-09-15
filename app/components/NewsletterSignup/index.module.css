@@ -54,7 +54,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
   background-color: lightseagreen;
 }
 .container > form.loading {
@@ -129,4 +128,8 @@
 .controls button.submit:disabled {
   background-color: grey;
   cursor: not-allowed;
+}
+
+.success {
+  margin-top: 0.6em;
 }

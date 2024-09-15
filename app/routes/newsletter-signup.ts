@@ -35,10 +35,10 @@ export const action: ActionFunction = async ({ request }) => {
   }
 
   // wake listmonk up, otherwise the first request will fail
-  await fetch(`${process.env.LISTMONK_API}`, {
+  fetch(`${process.env.LISTMONK_API}`, {
     method: "head",
   });
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   let res = await fetch(`${process.env.LISTMONK_API}/public/subscription`, {
     method: "post",

@@ -81,7 +81,7 @@ const NewsletterSignup = () => {
             aria-label="sign up for our newsletter"
             disabled={captchaState !== "verified"}
           >
-            sign me up
+            {fetcher.state === "idle" ? "sign me up" : "signing you up..."}
           </button>
         </div>
       </fetcher.Form>
