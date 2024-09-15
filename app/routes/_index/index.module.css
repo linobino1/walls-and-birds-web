@@ -115,9 +115,9 @@ iframe.old {
 .newsletter {
   display: grid;
   grid-template: 1fr / 1fr;
-  width: min(16em, 94vw);
+  width: min(13.2em, 94vw);
 }
-.newsletter.active::before {
+.newsletterBackdrop {
   content: "";
   position: fixed;
   top: 0;
@@ -163,6 +163,9 @@ iframe.old {
 .newsletter p.error[aria-hidden="true"] {
   display: none;
 }
+.newsletter p.error {
+  background-color: orangered;
+}
 .newsletter > p {
   display: flex;
   flex-direction: column;
@@ -170,9 +173,6 @@ iframe.old {
   align-items: center;
   margin: 0;
   background-color: lightseagreen;
-}
-.newsletter > p.error {
-  background-color: orangered;
 }
 .newsletter > form.loading {
   opacity: 0.5;
@@ -231,15 +231,25 @@ iframe.old {
   cursor: pointer;
 }
 
-.newsletter .captcha {
-  margin-block: 1.6rem;
+.newsletter .controls {
+  /* margin-top: 1.6rem; */
 }
 
-.newsletter .captcha button.submit {
+.newsletter .captchaState {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.newsletter .controls button.submit {
   margin-top: 1em;
   padding: 0.5em 1em;
   height: auto;
   background-color: lightseagreen;
+  transition: background-color 0.2s;
+}
+.newsletter .controls button.submit:disabled {
+  background-color: grey;
+  cursor: not-allowed;
 }
 
 .nav {

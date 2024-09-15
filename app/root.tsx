@@ -29,7 +29,7 @@ export const meta: MetaFunction = () => [
 export const loader: LoaderFunction = async () => {
   return json({
     publicKeys: {
-      HCAPTCHA_SITE_KEY: process.env.HCAPTCHA_SITE_KEY,
+      TURNSTILE_SITE_KEY: process.env.TURNSTILE_SITE_KEY,
     },
   });
 };

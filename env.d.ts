@@ -48,13 +48,13 @@ declare module "@remix-run/express" {
 
 declare global {
   interface BrowserEnvironment {
-    HCAPTCHA_SITE_KEY: string;
+    TURNSTILE_SITE_KEY: string;
     USE_CLOUDFLARE_IMAGE_TRANSFORMATIONS: string;
     CDN_CGI_IMAGE_URL: string;
   }
   interface ServerEnvironment extends BrowserEnvironment {
     NODE_ENV: "development" | "production";
-    HCAPTCHA_SECRET_KEY: string;
+    TURNSTILE_SECRET_KEY: string;
     S3_ENABLED: string;
     S3_ENDPOINT: string;
     S3_BUCKET: string;

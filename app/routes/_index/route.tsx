@@ -1,16 +1,9 @@
 import type { ActionFunction, LoaderFunctionArgs } from "@remix-run/node";
-import {
-  json,
-  Form,
-  NavLink,
-  useActionData,
-  useLoaderData,
-  useNavigation,
-} from "@remix-run/react";
+import { json, NavLink, useLoaderData, useFetcher } from "@remix-run/react";
 import classes from "./index.module.css";
 import { Shows } from "~/components/Shows";
 import Layout from "~/components/Layout";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import Turnstile from "react-turnstile";
 import { useEffect, useRef, useState } from "react";
 import environment from "~/util/environment";
 import SocialIcons from "~/components/SocialIcons";
@@ -33,22 +26,21 @@ export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
 };
 
 const validateCaptcha = async (token: string): Promise<boolean> => {
-  if (process.env.NODE_ENV === "development") {
-    console.log("Captcha validation skipped in development mode");
-    return true;
-  }
   try {
-    const res = await fetch("https://hcaptcha.com/siteverify", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        secret: process.env.HCAPTCHA_SECRET_KEY,
-        sitekey: process.env.HCAPTCHA_SITE_KEY,
-        response: token,
-      }),
-    });
+    const res = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: process.env.TURNSTILE_SECRET_KEY,
+          sitekey: process.env.TURNSTILE_SITE_KEY,
+          response: token,
+        }),
+      }
+    );
     const data = await res.json();
     return !!data.success;
   } catch (error) {
@@ -56,14 +48,14 @@ const validateCaptcha = async (token: string): Promise<boolean> => {
   }
 };
 
-export const action: ActionFunction = async ({ context, request }) => {
+export const action: ActionFunction = async ({ request }) => {
   const data = await request.formData();
 
   // validate captcha
-  if (!(await validateCaptcha(data.get("h-captcha-response") as string))) {
+  if (!(await validateCaptcha(data.get("cf-turnstile-response") as string))) {
     return json({
-      error: true,
-      message: `Please confirm the captcha.`,
+      success: false,
+      message: `The humanity checks could not be validated on the server. Sorry, please try again.`,
     });
   }
 
@@ -86,12 +78,13 @@ export const action: ActionFunction = async ({ context, request }) => {
 
   if (res.ok) {
     return json({
+      success: true,
       message: `Thanks for signing up! Check your inbox/spam for an email with the confirmation link.`,
       original_response: res.json(),
     });
   } else {
     return json({
-      error: true,
+      success: false,
       message: `We couldn't sign you up. Please try again.`,
       original_response: res.json(),
     });
@@ -100,33 +93,20 @@ export const action: ActionFunction = async ({ context, request }) => {
 
 export default function Index() {
   const { shows } = useLoaderData<typeof loader>();
-  const actionData = useActionData<typeof action>();
-  const navigation = useNavigation();
-  const state: "idle" | "loading" | "error" | "success" =
-    navigation.state === "submitting"
-      ? "loading"
-      : actionData?.error
-      ? "error"
-      : actionData?.message
-      ? "success"
-      : "idle";
+  const fetcher = useFetcher<typeof action>();
   const [isActive, setIsActive] = useState(false);
+  // const [captchaCleared, setCaptchaCleared] = useState(false);
+  const [captchaState, setCaptchaState] = useState<
+    "checking" | "verified" | "error"
+  >("checking");
   const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (state === "success") {
+    if (fetcher.data?.success) {
       form.current?.reset();
       isActive && setIsActive(false);
     }
-  }, [state, isActive]);
-
-  useEffect(() => {
-    document.body.onclick = (e) => {
-      if (!form.current?.contains(e.target as Node)) {
-        setIsActive(false);
-      }
-    };
-  }, [isActive]);
+  }, [fetcher.data, isActive]);
 
   return (
     <Layout className={classes.container}>
@@ -139,13 +119,19 @@ export default function Index() {
       <div
         className={`${classes.newsletter} ${isActive ? classes.active : ""}`}
       >
-        <Form
+        {isActive && (
+          <div
+            className={classes.newsletterBackdrop}
+            onClick={() => setIsActive(false)}
+          />
+        )}
+        <fetcher.Form
           ref={form}
           method="post"
-          aria-hidden={state === "success"}
-          className={state === "loading" ? classes.loading : ""}
+          aria-hidden={fetcher.data?.success}
+          className={fetcher.state !== "idle" ? classes.loading : ""}
         >
-          <fieldset disabled={state === "loading"}>
+          <fieldset disabled={fetcher.state !== "idle"}>
             <input
               id="email"
               name="email"
@@ -164,26 +150,43 @@ export default function Index() {
             </button>
           </fieldset>
           <div
-            className={classes.captcha}
+            className={classes.controls}
             style={{ display: isActive ? "block" : "none" }}
           >
-            <HCaptcha sitekey={environment().HCAPTCHA_SITE_KEY} />
-            <p className={classes.error} aria-hidden={state !== "error"}>
-              {actionData?.message ||
+            {isActive && (
+              <Turnstile
+                sitekey={environment().TURNSTILE_SITE_KEY}
+                execution="render"
+                onVerify={() => setCaptchaState("verified")}
+                onError={() => setCaptchaState("error")}
+              />
+            )}
+            <p
+              className={classes.error}
+              aria-hidden={fetcher.data?.success !== false}
+            >
+              {fetcher.data?.message ||
                 "We couldn't sign you up. Please try again."}
-              <button onClick={() => setIsActive(false)}>ok</button>
+            </p>
+            <p className={classes.captchaState}>
+              {captchaState === "checking" &&
+                "we're checking if you are human..."}
+              {captchaState === "verified" && "all checks passed"}
+              {captchaState === "error" &&
+                "It seems like you are a bot, please try again."}
             </p>
             <button
               className={classes.submit}
               type="submit"
               aria-label="sign up for our newsletter"
+              disabled={captchaState !== "verified"}
             >
               sign me up
             </button>
           </div>
-        </Form>
-        <p className={classes.success} aria-hidden={state !== "success"}>
-          {actionData?.message}
+        </fetcher.Form>
+        <p className={classes.success} aria-hidden={!fetcher.data?.success}>
+          {fetcher.data?.message}
         </p>
       </div>
 
