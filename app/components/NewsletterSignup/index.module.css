@@ -88,6 +88,7 @@
   background: transparent;
   color: inherit;
   font-size: inherit;
+  font-weight: inherit;
 }
 .container input[name="email"]::placeholder {
   color: inherit;
@@ -106,7 +107,7 @@
   outline: none;
   box-shadow: none;
 }
-.container button:hover {
+.container button:not(:disabled):hover {
   background: #fff !important;
   outline: 2px solid white;
   color: #000;
