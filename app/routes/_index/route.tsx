@@ -49,7 +49,7 @@ export default function Index() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          shop ↗
+          shop <span className={classes.arrow}>↗</span>
         </a>
       </h2>
       <hr />

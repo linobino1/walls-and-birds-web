@@ -52,6 +52,10 @@
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
 }
+.container a .arrow {
+  font-size: 120%;
+  vertical-align: bottom;
+}
 .releases {
   display: flex;
   flex-direction: row;
