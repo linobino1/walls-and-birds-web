@@ -4,6 +4,8 @@
   width: min(13.2em, 94vw);
 }
 .backdrop {
+  opacity: 0;
+  pointer-events: none;
   content: "";
   position: fixed;
   top: 0;
@@ -13,6 +15,11 @@
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
   z-index: 1;
+  /* transition: opacity 0.2s ease-in-out; */
+}
+.container.active > .backdrop {
+  opacity: 1;
+  pointer-events: auto;
 }
 .container.active > form {
   position: relative;
@@ -37,7 +44,6 @@
 }
 .container > * {
   grid-area: 1 / 1;
-  opacity: 1;
 }
 .container > *[aria-hidden="true"] {
   opacity: 0;
@@ -96,6 +102,7 @@
 .container input[name="email"] {
   width: 6.5em;
   color: grey;
+  transition: all 0.2s ease-in-out;
 }
 .container.active input[name="email"] {
   width: 12em;

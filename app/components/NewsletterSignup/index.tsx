@@ -31,9 +31,7 @@ const NewsletterSignup = () => {
 
   return (
     <div className={`${classes.container} ${isActive ? classes.active : ""}`}>
-      {isActive && (
-        <div className={classes.backdrop} onClick={() => setIsActive(false)} />
-      )}
+      <div className={classes.backdrop} onClick={() => setIsActive(false)} />
       <fetcher.Form
         ref={form}
         action="/newsletter-signup"
