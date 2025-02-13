@@ -32,6 +32,7 @@ export default buildConfig({
   globals: [Faq, Info],
   typescript: {
     outputFile: path.resolve(__dirname, "cms/payload-types.ts"),
+    declare: false,
   },
   plugins: [
     cloudStorage({
