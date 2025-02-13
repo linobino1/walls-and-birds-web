@@ -21,14 +21,18 @@ export const Layout: React.FC<Props> = ({
       <main {...props}>{children}</main>
       {!props.noFooter && (
         <footer>
-          <NavLink prefetch="intent" to="/legal">
-            legal notice
-          </NavLink>
-          {pathname === "/" && (
-            <NavLink prefetch="intent" to="/past-shows">
-              past shows
+          <div />
+          <nav>
+            <div>© {new Date().getFullYear()} Walls & Birds</div>
+            <NavLink prefetch="intent" to="/legal">
+              legal notice
             </NavLink>
-          )}
+            {pathname === "/" && (
+              <NavLink prefetch="intent" to="/past-shows">
+                past shows
+              </NavLink>
+            )}
+          </nav>
         </footer>
       )}
     </div>

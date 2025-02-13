@@ -12,13 +12,20 @@
 }
 
 .container footer {
+  font-family: "Times New Roman", Times, serif;
   position: relative;
   z-index: 1;
   padding: 1rem;
   padding-top: 4rem;
-  color: #aaa;
+  color: #a09d9d;
   display: flex;
   width: 100%;
+  gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.container footer nav {
+  display: flex;
   gap: 1rem;
 }
 @media (max-width: 768px) {
