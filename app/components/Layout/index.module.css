@@ -13,6 +13,7 @@
 
 .container footer {
   font-family: "Times New Roman", Times, serif;
+  font-size: small;
   position: relative;
   z-index: 1;
   padding: 1rem;
@@ -20,17 +21,17 @@
   color: #a09d9d;
   display: flex;
   width: 100%;
-  gap: 1rem;
+  gap: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .container footer nav {
   display: flex;
   gap: 1rem;
 }
-@media (max-width: 768px) {
-  .container[data-layout-center="true"] footer {
-    justify-content: center;
+@media (min-width: 768px) {
+  .container footer {
+    justify-content: flex-end;
   }
 }
 

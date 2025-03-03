@@ -13,11 +13,7 @@ export const Layout: React.FC<Props> = ({
 }) => {
   const { pathname } = useLocation();
   return (
-    <div
-      className={classes.container}
-      data-layout-type={type ?? "black"}
-      data-layout-center={pathname === "/"}
-    >
+    <div className={classes.container} data-layout-type={type ?? "black"}>
       <main {...props}>{children}</main>
       {!props.noFooter && (
         <footer>
@@ -27,9 +23,13 @@ export const Layout: React.FC<Props> = ({
             <NavLink prefetch="intent" to="/legal">
               legal notice
             </NavLink>
-            {pathname === "/" && (
+            {pathname === "/" ? (
               <NavLink prefetch="intent" to="/past-shows">
                 past shows
+              </NavLink>
+            ) : (
+              <NavLink prefetch="intent" to="/">
+                home
               </NavLink>
             )}
           </nav>
