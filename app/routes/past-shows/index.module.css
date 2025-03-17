@@ -8,11 +8,11 @@
   max-width: min(90vw, 800px);
   margin: 0 auto;
   font-size: 120%;
+  text-align: center;
 }
 .container h1 {
   font-size: 6rem;
   font-family: "Cooper", serif;
-  text-align: center;
 }
 .container a:visited,
 .container a:hover,
