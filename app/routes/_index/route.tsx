@@ -6,6 +6,7 @@ import Layout from "~/components/Layout";
 import SocialIcons from "~/components/SocialIcons";
 import NewsletterSignup from "~/components/NewsletterSignup";
 import { Suspense } from "react";
+import { AutoScroll } from "~/components/AutoScroll";
 
 export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
   // today, 00:00:00
@@ -30,6 +31,7 @@ export default function Index() {
 
   return (
     <Layout className={classes.container}>
+      <AutoScroll />
       <h1>Walls & Birds</h1>
       <h2 className={classes.tour}>tour dates</h2>
       <Suspense fallback={<div>Loading...</div>}>
