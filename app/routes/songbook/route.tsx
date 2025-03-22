@@ -7,9 +7,9 @@ export default function Songbook() {
     <Layout type="white" className={classes.container}>
       <Link to="/songbook">
         <h1>
-          <div>the</div>
+          <div>The</div>
           <div>Walls & Birds</div>
-          <div>songbook</div>
+          <div>Songbook</div>
         </h1>
       </Link>
 
