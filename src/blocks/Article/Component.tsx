@@ -7,7 +7,7 @@ export const ArticleBlockComponent: React.FC<ArticleBlock> = ({ title, caption, 
     throw new Error('Media doc is missing depth.')
   }
   return (
-    <Gutter className="mt-4 mb-6">
+    <Gutter className="mt-4 mb-6" size="sm">
       <Link href={(media as Media).url as string} target="_blank">
         <div className="text-left">{title}</div>
       </Link>
