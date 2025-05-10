@@ -55,7 +55,11 @@ export const GalleryBlockComponent: React.FC<GalleryBlock> = ({ images }) => {
         >
           {images?.map(({ media }, index) => (
             <div key={index} className="flex flex-col items-center px-4">
-              <Image src={media} className="rounded-sm" sizes="(max-width: 748px) 100vw, 728px" />
+              <Image
+                src={media}
+                className="aspect-[3/2] rounded-sm bg-transparent object-contain object-center"
+                sizes="(max-width: 748px) 100vw, 728px"
+              />
             </div>
           ))}
         </SlickSlider>
