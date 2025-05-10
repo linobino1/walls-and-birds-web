@@ -1,4 +1,4 @@
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { defaultLexical } from '@/seed/util/defaultLexical'
 import { Block } from 'payload'
 
 export const Content: Block = {
@@ -8,11 +8,7 @@ export const Content: Block = {
     {
       name: 'richText',
       type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures]
-        },
-      }),
+      editor: defaultLexical,
       label: false,
       required: true,
       localized: true,

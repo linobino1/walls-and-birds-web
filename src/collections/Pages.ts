@@ -7,6 +7,9 @@ import { revalidatePath } from '@/util/revalidate'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
+  admin: {
+    useAsTitle: 'title',
+  },
   versions: {
     drafts: {
       autosave: {
