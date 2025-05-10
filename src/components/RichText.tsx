@@ -20,7 +20,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   ...defaultConverters,
   paragraph: ({ node, nodesToJSX, ...args }) => (
     <Gutter size="sm">
-      <p>{nodesToJSX({ ...args, nodes: node.children })}</p>
+      <p className="min-h-[1em]">{nodesToJSX({ ...args, nodes: node.children })}</p>
     </Gutter>
   ),
   heading: (args) => (
