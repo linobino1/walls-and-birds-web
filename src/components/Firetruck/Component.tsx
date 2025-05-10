@@ -47,7 +47,6 @@ export const FiretruckVideo = () => {
       <video
         ref={videoRef}
         poster="/firetruck/still.jpg"
-        autoPlay
         loop
         muted
         playsInline
@@ -57,7 +56,7 @@ export const FiretruckVideo = () => {
         <source src="/firetruck/firetruck.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
-      <audio ref={audioRef} autoPlay loop>
+      <audio ref={audioRef} loop>
         <source src="/firetruck/komm_here_in_time.mp3" type="audio/mpeg" />
         Your browser does not support the audio tag.
       </audio>
