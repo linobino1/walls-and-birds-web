@@ -54,6 +54,7 @@ export const FiretruckVideo = () => {
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/firetruck/firetruck.mp4" type="video/mp4" />
+        <source src="/firetruck/firetruck.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <audio ref={audioRef} autoPlay loop>
