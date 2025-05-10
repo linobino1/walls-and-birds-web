@@ -3,6 +3,7 @@ import { Content } from '@/blocks/Content/config'
 import { RawHTML } from '@/blocks/RawHTML/config'
 import { slugField } from '@/fields/slug'
 import { Gallery } from '@/blocks/Gallery/config'
+import { revalidatePath } from '@/util/revalidate'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -12,6 +13,9 @@ export const Pages: CollectionConfig<'pages'> = {
         interval: 500,
       },
     },
+  },
+  hooks: {
+    afterChange: [({ doc }) => revalidatePath(`/${doc.slug}`)],
   },
   fields: [
     {
