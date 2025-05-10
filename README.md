@@ -1,48 +1,67 @@
-# Welcome to RePay!
+# Payload Blank Template
 
-Simple template to get started with [Remix](https://remix.run) and [PayloadCMS](https://payloadcms.com), without the monorepo messiness!
+This template comes configured with the bare minimum to get started on anything you need.
 
-![repay-header](https://github.com/manawiki/repay/assets/84349818/9fc343c2-0c6f-4d2d-a603-c838f8d21156)
+## Quick start
 
-## Development
+This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
 
-Copy .env.example to .env and fill the required environment variables.
+## Quick Start - local setup
 
-```sh
-yarn;
-yarn dev
-```
+To spin up this template locally, follow these steps:
 
-## Deployment
+### Clone
 
-First, build your app for production:
+After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
 
-```sh
-yarn build
-```
+### Development
 
-Then run the app in production mode:
+1. First [clone the repo](#clone) if you have not done so already
+2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URI` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
 
-```sh
-yarn start
-```
+3. `pnpm install && pnpm dev` to install dependencies and start the dev server
+4. open `http://localhost:3000` to open the app in your browser
 
-### Fly.io Setup
+That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
 
-1. Create an account on [Fly.io](https://fly.io)
-1. Install the [Fly CLI](https://fly.io/docs/getting-started/installing-flyctl/)
-1. Run `flyctl login` and follow the prompts
-1. Run `flyctl launch` in the project root
-1. Enter `y` to `copy its configuration to the new app`
-1. Enter `N` to `tweak these settings`
-1. The app should deploy now
-1. Now you can set up the Github Action
+#### Docker (Optional)
 
-### Github Action
+If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
 
-1. Create a deploy token by running `flyctl tokens create deploy`
-1. Create a new secret on your repository called `FLY_API_TOKEN` with your deploy token at `Settings > Secrets and Variables > Actions`
+To do so, follow these steps:
 
-## Media Files
+- Modify the `MONGODB_URI` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
+- Modify the `docker-compose.yml` file's `MONGODB_URI` to match the above `<dbname>`
+- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
 
-Media files should be stored in a S3 bucket. Create a bucket at Cloudflare, AWS, or any other provider and fill the required environment variables in the .env file. When using Cloudflare R2, specify `S3_REGION=auto`
+## How it works
+
+The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+
+### Collections
+
+See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
+
+- #### Users (Authentication)
+
+  Users are auth-enabled collections that have access to the admin panel.
+
+  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+
+- #### Media
+
+  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
+
+### Docker
+
+Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
+
+1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
+1. Next run `docker-compose up`
+1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
+
+That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
+
+## Questions
+
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
