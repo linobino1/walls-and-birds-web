@@ -6,7 +6,8 @@ import { revalidatePath } from 'next/cache'
 export const Songs: CollectionConfig = {
   slug: 'songs',
   admin: {
-    defaultColumns: ['title'],
+    defaultColumns: ['title', 'updatedAt'],
+    listSearchableFields: ['title', 'content'],
   },
   access: publicReadOnly,
   hooks: {
@@ -23,6 +24,7 @@ export const Songs: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
+      admin: {},
     },
     ...slugField('title'),
     {
