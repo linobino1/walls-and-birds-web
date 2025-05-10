@@ -1,6 +1,6 @@
 import type { GlobalConfig } from 'payload'
 import { publicReadOnlyGlobal } from '@/util/access/publicReadOnly'
-import { revalidatePath } from 'next/cache'
+import { revalidatePath } from '@/util/revalidate'
 
 export const Faq: GlobalConfig = {
   slug: 'faq',

@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-black text-white">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>

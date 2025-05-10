@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { publicReadOnly } from '@/util/access/publicReadOnly'
-import { revalidatePath } from 'next/cache'
+import { revalidatePath } from '@/util/revalidate'
 
 export const Shows: CollectionConfig = {
   slug: 'shows',

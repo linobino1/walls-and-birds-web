@@ -2,7 +2,9 @@ import { withPayload } from '@payloadcms/next/withPayload'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your Next.js config here
+  images: {
+    remotePatterns: process.env.MEDIA_URL ? [new URL(`${process.env.MEDIA_URL}/**`)] : [],
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })

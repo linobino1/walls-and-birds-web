@@ -1,0 +1,525 @@
+[
+  {
+    "date": "2014-08-22T00:00:00.000Z",
+    "location": "Berlin, Kuss Kuss",
+    "link": "http://www.kusskussberlin.de"
+  },
+  { "date": "2014-09-05T00:00:00.000Z", "location": "Erfurt, Franz Mehlhose", "link": "" },
+  {
+    "date": "2014-10-04T00:00:00.000Z",
+    "location": "Berlin, An der Neuen Nationalgalerie, Beatbude Open-Air",
+    "link": "www.beatbude.com"
+  },
+  {
+    "date": "2015-01-09T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-01-10T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  { "date": "2015-02-27T00:00:00.000Z", "location": "Berlin, Haus 1", "link": "www.beatbude.com" },
+  {
+    "date": "2015-03-06T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-03-07T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-04-04T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-05-09T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  { "date": "2015-06-12T00:00:00.000Z", "location": "Karlsruhe, Fettschmelze", "link": "" },
+  {
+    "date": "2015-06-13T00:00:00.000Z",
+    "location": "Esslingen a.N., Villa Merkel, SNAG Festival",
+    "link": ""
+  },
+  {
+    "date": "2015-06-20T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln, I Hear The Synth In East Berlin",
+    "link": "www.villaneukoelln.de"
+  },
+  { "date": "2015-07-23T00:00:00.000Z", "location": "Berlin, Delphi Kino, Modenschau", "link": "" },
+  {
+    "date": "2015-07-25T00:00:00.000Z",
+    "location": "Görlitz, Blockhaus Garten, Zukunftsvisionen",
+    "link": "http://zuvi-festival.de"
+  },
+  { "date": "2015-07-26T00:00:00.000Z", "location": "Görlitz, Hinterhof, Privat", "link": "" },
+  {
+    "date": "2015-07-31T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-08-08T00:00:00.000Z",
+    "location": "Mecklenburg, Wilde Möhre Festival",
+    "link": "http://wildemoehrefestival.de/"
+  },
+  {
+    "date": "2015-08-28T00:00:00.000Z",
+    "location": "Bad Kühlungsborn, Campingpark Bad Kühlungsborn",
+    "link": "http://www.topcamping.de"
+  },
+  {
+    "date": "2015-09-11T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  { "date": "2015-09-24T00:00:00.000Z", "location": "Berlin, Klunkerkranich", "link": "" },
+  {
+    "date": "2015-10-03T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-10-11T00:00:00.000Z",
+    "location": "Berlin, ZKU",
+    "link": "http://zku-berlin.org/"
+  },
+  {
+    "date": "2015-10-17T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln, Simi Will 100 Jähriges Jubiläum",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-10-23T00:00:00.000Z",
+    "location": "Berlin, So Wie So",
+    "link": "http://sowieso-neukoelln.de"
+  },
+  {
+    "date": "2015-11-06T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  {
+    "date": "2015-12-11T00:00:00.000Z",
+    "location": "Berlin, Theaterhaus Mitte, Stundenhotel",
+    "link": "http://www.theaterhaus.berlin/"
+  },
+  {
+    "date": "2015-12-12T00:00:00.000Z",
+    "location": "Berlin, Ausland",
+    "link": "ausland-berlin.de/"
+  },
+  { "date": "2015-12-20T00:00:00.000Z", "location": "Berlin, Johnny Knueppel", "link": "" },
+  {
+    "date": "2016-01-08T00:00:00.000Z",
+    "location": "Berlin, Mme. Claude",
+    "link": "www.madameclaude.de"
+  },
+  {
+    "date": "2016-02-12T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.villaneukoelln.de"
+  },
+  { "date": "2016-03-10T00:00:00.000Z", "location": "Berlin, Mitteleuropa", "link": "" },
+  { "date": "2016-04-01T00:00:00.000Z", "location": "Berlin, Johnny Knueppel", "link": "" },
+  {
+    "date": "2016-04-22T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://www.facebook.com/VillaNeukoelln?ref=ts&fref=ts"
+  },
+  {
+    "date": "2016-06-02T00:00:00.000Z",
+    "location": "Berlin, Kantine Am Berghain",
+    "link": "https://www.facebook.com/events/206125379771561/"
+  },
+  {
+    "date": "2016-06-10T00:00:00.000Z",
+    "location": "Berlin, Schrippe Hawaii",
+    "link": "https://www.facebook.com/schrippehawaii/"
+  },
+  {
+    "date": "2016-06-30T00:00:00.000Z",
+    "location": "Berlin, Kronprinzenpalais Unter den Linden, Augustin Teboul Show",
+    "link": "http://www.augustin-teboul.com/"
+  },
+  {
+    "date": "2016-07-02T00:00:00.000Z",
+    "location": "Lärz, Fusion Festival, Dubstation",
+    "link": ""
+  },
+  {
+    "date": "2016-08-06T00:00:00.000Z",
+    "location": "Berlin, ://about blank, Down By The River Festival",
+    "link": "https://www.facebook.com/events/817905201686973/"
+  },
+  {
+    "date": "2016-08-26T00:00:00.000Z",
+    "location": "Schorndorf, Schloss, Secret Castle Concerts",
+    "link": "http://www.artmeetsart.de/hello"
+  },
+  {
+    "date": "2016-09-07T00:00:00.000Z",
+    "location": "Görlitz, RABRYKA",
+    "link": "http://www.rabryka.eu/justlab/index.php"
+  },
+  {
+    "date": "2016-09-08T00:00:00.000Z",
+    "location": "Dresden, Hole Of Fame",
+    "link": "https://www.facebook.com/events/178191565933279/"
+  },
+  {
+    "date": "2016-09-09T00:00:00.000Z",
+    "location": "Leipzig, Noch Besser Leben",
+    "link": "http://www.nochbesserleben.com"
+  },
+  {
+    "date": "2016-09-13T00:00:00.000Z",
+    "location": "Giessen, Alte Kupferschmiede",
+    "link": "https://altekupferschmiede.net"
+  },
+  {
+    "date": "2016-09-14T00:00:00.000Z",
+    "location": "Luxembourg, De Gude Wellen",
+    "link": "http://www.deguddewellen.lu"
+  },
+  {
+    "date": "2016-09-15T00:00:00.000Z",
+    "location": "Karlsruhe, Die Kurbel",
+    "link": "http://www.kurbel-karlsruhe.de"
+  },
+  {
+    "date": "2016-09-16T00:00:00.000Z",
+    "location": "Stuttgart, Marmorsaal, Songs Of Marble Hall",
+    "link": "https://www.facebook.com/events/543179765882206/"
+  },
+  {
+    "date": "2016-09-17T00:00:00.000Z",
+    "location": "Stuttgart, Fluxus Bau, New Fall Festival Meets Fluxus",
+    "link": "https://www.facebook.com/events/290191431354297/"
+  },
+  {
+    "date": "2016-09-23T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://www.facebook.com/VillaNeukoelln/?fref=ts"
+  },
+  {
+    "date": "2016-10-15T00:00:00.000Z",
+    "location": "Berlin, Kantine am Berghain",
+    "link": "http://berghain.de/event/1754"
+  },
+  {
+    "date": "2016-11-05T00:00:00.000Z",
+    "location": "Berlin, Neue Nachbarn, Opening Party",
+    "link": "https://www.facebook.com/events/318355011871920/"
+  },
+  {
+    "date": "2016-11-25T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://www.facebook.com/events/1110899812341470/"
+  },
+  {
+    "date": "2016-12-02T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://www.facebook.com/events/1110899812341470/permalink/1112839985480786/"
+  },
+  {
+    "date": "2016-12-17T00:00:00.000Z",
+    "location": "Berlin, West Germany",
+    "link": "http://www.westgermany.eu"
+  },
+  {
+    "date": "2017-01-04T00:00:00.000Z",
+    "location": "Berlin, BarTausend",
+    "link": "www.tausendberlin.com/"
+  },
+  {
+    "date": "2017-01-26T00:00:00.000Z",
+    "location": "Augsburg, City Club, Kuriosum",
+    "link": "https://www.facebook.com/events/225515701207382/"
+  },
+  {
+    "date": "2017-02-16T00:00:00.000Z",
+    "location": "Berlin, BarTausend",
+    "link": "http://tausendberlin.com"
+  },
+  {
+    "date": "2017-03-08T00:00:00.000Z",
+    "location": "Berlin, Schokoladen",
+    "link": "http://www.schokoladen-mitte.de"
+  },
+  {
+    "date": "2017-03-18T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://www.facebook.com/VillaNeukoelln/?fref=ts"
+  },
+  {
+    "date": "2017-04-01T00:00:00.000Z",
+    "location": "Berlin, Rita Records",
+    "link": "https://www.facebook.com/ritarecords/"
+  },
+  {
+    "date": "2017-06-08T00:00:00.000Z",
+    "location": "Berlin, Ballhaus, cancelled!",
+    "link": "https://www.facebook.com/events/1363711847010863/?fref=ts"
+  },
+  {
+    "date": "2017-06-28T00:00:00.000Z",
+    "location": "Berlin, Monarch",
+    "link": "https://www.facebook.com/events/141748659719920/?acontext=%7B%22ref%22%3A%223%22%2C%22ref_newsfeed_story_type%22%3A%22regular%22%2C%22feed_story_type%22%3A%22361%22%2C%22action_history%22%3A%22null%22%7D"
+  },
+  {
+    "date": "2017-07-15T00:00:00.000Z",
+    "location": "Uckermark, Libken",
+    "link": "https://www.facebook.com/events/1952201995062638/?acontext=%7B%22ref%22%3A%223%22%2C%22ref_newsfeed_story_type%22%3A%22regular%22%2C%22action_history%22%3A%22null%22%7D"
+  },
+  {
+    "date": "2017-09-06T00:00:00.000Z",
+    "location": "Berlin, Schrippe Hawaii",
+    "link": "https://www.facebook.com/events/550447321745682/?acontext=%7B%22source%22%3A5%2C%22page_id_source%22%3A445376045491088%2C%22action_history%22%3A[%7B%22surface%22%3A%22page%22%2C%22mechanism%22%3A%22main_list%22%2C%22extra_data%22%3A%22%7B%5C%22page_id%5C%22%3A445376045491088%2C%5C%22tour_id%5C%22%3Anull%7D%22%7D]%2C%22has_source%22%3Atrue%7D"
+  },
+  {
+    "date": "2017-09-07T00:00:00.000Z",
+    "location": "München, Milla",
+    "link": "http://www.milla-club.de"
+  },
+  {
+    "date": "2017-09-08T00:00:00.000Z",
+    "location": "Göppingen, Al Capone",
+    "link": "https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjMie3KyI3WAhXCb1AKHcSmAScQFgguMAE&url=https%3A%2F%2Fwww.facebook.com%2Fkulturcafecapone%2F%3Frf%3D119121621477870&usg=AFQjCNGdhHGs6oTVK7nM8fAKpB22I-6RpA"
+  },
+  {
+    "date": "2017-09-09T00:00:00.000Z",
+    "location": "Basel, Silofest",
+    "link": "http://www.erlenmatt-ost.ch/Erlenmatt-Ost/Erlenmatt-Ost/Silofest.html"
+  },
+  {
+    "date": "2017-09-10T00:00:00.000Z",
+    "location": "Stuttgart, Contain’t",
+    "link": "https://www.facebook.com/events/1976442355934307/"
+  },
+  {
+    "date": "2017-09-14T00:00:00.000Z",
+    "location": "Freiburg, Hilda 5",
+    "link": "https://www.facebook.com/events/516964188655137/?acontext=%7B%22action_history%22%3A%22[%7B%5C%22surface%5C%22%3A%5C%22page%5C%22%2C%5C%22mechanism%5C%22%3A%5C%22page_upcoming_events_card%5C%22%2C%5C%22extra_data%5C%22%3A[]%7D]%22%2C%22has_source%22%3Atrue%7D"
+  },
+  {
+    "date": "2017-09-16T00:00:00.000Z",
+    "location": "Giessen, Fröhliche Gesellschaft",
+    "link": "https://www.facebook.com/events/895429920611990/?ti=icl"
+  },
+  {
+    "date": "2017-09-22T00:00:00.000Z",
+    "location": "Görlitz, RABRYKA",
+    "link": "https://www.facebook.com/events/353992075050544/"
+  },
+  {
+    "date": "2017-09-30T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://www.facebook.com/events/1939671852952023/?acontext=%7B%22action_history%22%3A%22[%7B%5C%22surface%5C%22%3A%5C%22page%5C%22%2C%5C%22mechanism%5C%22%3A%5C%22page_upcoming_events_card%5C%22%2C%5C%22extra_data%5C%22%3A[]%7D]%22%2C%22has_source%22%3Atrue%7D"
+  },
+  {
+    "date": "2017-11-18T00:00:00.000Z",
+    "location": "Augsburg, Café Viktor",
+    "link": "https://www.facebook.com/events/1807377156227180/"
+  },
+  {
+    "date": "2017-11-25T00:00:00.000Z",
+    "location": "Groningen(NL), Vera",
+    "link": "http://www.vera-groningen.nl"
+  },
+  {
+    "date": "2017-12-01T00:00:00.000Z",
+    "location": "Kopenhagen DK, Reffen209",
+    "link": "https://www.facebook.com/events/1937009816553861/"
+  },
+  {
+    "date": "2017-12-15T00:00:00.000Z",
+    "location": "Basel, Erster Stock",
+    "link": "https://www.petzitickets.ch/event_description.php?event_id=39043"
+  },
+  { "date": "2017-12-20T00:00:00.000Z", "location": "Karlsruhe, HfG, Weihnachtsfeier", "link": "" },
+  {
+    "date": "2018-01-19T00:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "www.facebook.com/villaneukoelln"
+  },
+  { "date": "2018-05-16T12:00:00.000Z", "location": "Leipzig, Mjut", "link": "https://mjut.me" },
+  {
+    "date": "2018-07-01T00:00:00.000Z",
+    "location": "Lärz, Fusion Festival, Karl Kutter",
+    "link": ""
+  },
+  {
+    "date": "2019-02-17T00:00:00.000Z",
+    "location": "Freiburg, Waldsee, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22355"
+  },
+  {
+    "date": "2019-02-18T00:00:00.000Z",
+    "location": "Karlsruhe, KOHI, Die Nerven(USA) support show",
+    "link": "http://www.kohi.de"
+  },
+  {
+    "date": "2019-02-19T00:00:00.000Z",
+    "location": "Mainz, Schon Schön, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22444"
+  },
+  {
+    "date": "2019-02-20T00:00:00.000Z",
+    "location": "Essen, Zeche Carl, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22462"
+  },
+  {
+    "date": "2019-02-21T00:00:00.000Z",
+    "location": "Bielefeld, Forum, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22468"
+  },
+  {
+    "date": "2019-02-22T00:00:00.000Z",
+    "location": "Kiel, Kieler Schaubude, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22436"
+  },
+  {
+    "date": "2019-02-25T00:00:00.000Z",
+    "location": "Berlin, Kantine Am Berghain, Die Nerven(USA) Support Show",
+    "link": "http://berghain.de/events/"
+  },
+  {
+    "date": "2019-02-26T00:00:00.000Z",
+    "location": "Berlin, Schrippe Hawaii",
+    "link": "https://www.estrel.com/de/"
+  },
+  {
+    "date": "2019-02-27T00:00:00.000Z",
+    "location": "Berlin, SO36, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22476"
+  },
+  {
+    "date": "2019-02-28T00:00:00.000Z",
+    "location": "Nürnberg, Z-Club, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22464"
+  },
+  {
+    "date": "2019-03-02T00:00:00.000Z",
+    "location": "Passau, Zauberberg, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22435"
+  },
+  {
+    "date": "2019-03-03T00:00:00.000Z",
+    "location": "Regensburg, Slow Club, Die Nerven(USA) support show",
+    "link": "https://dqagency.app.love-your-artist.com/de/tickets/22766"
+  },
+  {
+    "date": "2019-03-04T00:00:00.000Z",
+    "location": "München, Kammerspiele, Die Nerven(USA) support show",
+    "link": "https://www.muenchner-kammerspiele.de"
+  },
+  {
+    "date": "2019-09-22T00:00:00.000Z",
+    "location": "Fey (FR), Château Du Feÿ, Feÿ Arts Festival",
+    "link": "https://fey-arts.com"
+  },
+  { "date": "2019-11-08T00:00:00.000Z", "location": "Chemnitz, Nikola Tesla", "link": "" },
+  { "date": "2019-11-10T00:00:00.000Z", "location": "Berlin, Villa Neukölln", "link": "" },
+  {
+    "date": "2022-07-17T00:00:00.000Z",
+    "location": "Chemnitz, Alte Spinnerei, Cosmic Gathering",
+    "link": "https://campcosmic.com"
+  },
+  {
+    "date": "2022-07-30T00:00:00.000Z",
+    "location": "Görlitz, Kühlhaus, Skizzentage (Guitar Set)",
+    "link": "https://kuehlhaus-goerlitz.de/);"
+  },
+  {
+    "date": "2022-08-20T12:00:00.000Z",
+    "location": "Karlsruhe, A Place in the Woods (Guitar Set)",
+    "link": "https://a-place-in-the-woods.net"
+  },
+  {
+    "date": "2023-01-24T23:00:00.000Z",
+    "location": "Berlin, Hanseat",
+    "link": "https://maps.app.goo.gl/7qcjm7RXdVvhzpBN9"
+  },
+  {
+    "date": "2023-06-01T22:00:00.000Z",
+    "location": "Meadows in the Mountains Festival (Bulgaria)",
+    "link": "https://www.meadowsinthemountains.com/"
+  },
+  {
+    "date": "2023-06-24T12:00:00.000Z",
+    "location": "Stuttgart, Kunststiftung (Guitar Set)",
+    "link": "https://www.kunststiftung.de/programm/open-house.html"
+  },
+  {
+    "date": "2023-07-05T22:00:00.000Z",
+    "location": "Schaffhausen (CH), Kammgarn",
+    "link": "https://kammgarn.ch/"
+  },
+  {
+    "date": "2023-10-04T22:00:00.000Z",
+    "location": "Chemnitz, Pochen Symposium",
+    "link": "https://www.pochen.eu/"
+  },
+  {
+    "date": "2023-12-06T23:00:00.000Z",
+    "location": "Berlin, Monarchin",
+    "link": "https://t.rausgegangen.de/tickets/07122023-monarch-walls-birds-less-than-a-kilometer-away-berl"
+  },
+  {
+    "date": "2024-01-01T12:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://t.rausgegangen.de/tickets/walls-birds-neujahrskonzert"
+  },
+  {
+    "date": "2024-03-15T12:00:00.000Z",
+    "location": "Berlin, B.L.O. Kantine (Guitar Set)",
+    "link": "https://t.rausgegangen.de/tickets/25-jahre-amstart-mit-angela-aux-walls-birds-circaeaa-dj-mash"
+  },
+  {
+    "date": "2024-05-08T12:00:00.000Z",
+    "location": "Berlin, Schrippe",
+    "link": "mailto:judy@wallsandbirds.com?subject=what%20is%20this%3F"
+  },
+  {
+    "date": "2024-06-24T12:00:00.000Z",
+    "location": "Waking Life Festival (PT)",
+    "link": "https://wakinglife.pt/"
+  },
+  {
+    "date": "2024-06-27T12:00:00.000Z",
+    "location": "Vilnius (LTU), Patiltė II",
+    "link": "https://emptybrainresalt.us/events/patilte-ii/"
+  },
+  {
+    "date": "2024-06-30T12:00:00.000Z",
+    "location": "Fusion Festival",
+    "link": "https://www.fusion-festival.de/"
+  },
+  {
+    "date": "2024-08-02T12:00:00.000Z",
+    "location": "Garbicz Festival (PL)",
+    "link": "https://garbiczfestival.com/"
+  },
+  {
+    "date": "2024-12-04T12:00:00.000Z",
+    "location": "Berlin, Tennis Bar",
+    "link": "https://www.instagram.com/tennisbarberlin"
+  },
+  {
+    "date": "2025-05-04T12:00:00.000Z",
+    "location": "Berlin, Villa Neukölln",
+    "link": "https://villaneukoelln.de"
+  },
+  {
+    "date": "2026-01-17T12:00:00.000Z",
+    "location": "Geislingen, Rätsche",
+    "link": "https://raetsche.com"
+  }
+]
