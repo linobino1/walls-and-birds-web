@@ -4,6 +4,7 @@ import type { Faq } from '@/payload-types'
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/util/cn'
 import { shuffleArray } from './util/shuffleArray'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   questions: Faq['questions']
@@ -35,7 +36,7 @@ const Question: React.FC<{ question: string; isActive: boolean }> = ({ question,
       }}
     >
       <div
-        className={cn('inline transition-colors duration-500', {
+        className={cn('inline p-2 transition-colors duration-500', {
           'bg-transparent': !isActive,
           'bg-black': isActive,
         })}
@@ -50,7 +51,7 @@ export const FaqClientComponent = ({ questions: _questions }: Props) => {
   const [questions, setQuestions] = useState<Faq['questions']>(_questions)
   const main = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState<number | null>(null)
-  const [invert, setInvert] = useState(false)
+  const router = useRouter()
 
   // shuffle questions
   useEffect(() => {
@@ -61,11 +62,10 @@ export const FaqClientComponent = ({ questions: _questions }: Props) => {
 
   // i toggles invert, space goes to the next question
   const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'i') {
-      console.log('invert')
-      setInvert(!invert)
-    } else if (e.key === ' ') {
+    if (e.key === ' ') {
       nextQuestion()
+    } else if (e.key === 'Escape') {
+      router.push('/')
     }
   }
 
@@ -84,13 +84,7 @@ export const FaqClientComponent = ({ questions: _questions }: Props) => {
       tabIndex={0}
       ref={main}
       onKeyDown={onKeyDown}
-      className={cn(
-        'fixed inset-0 z-10 flex items-center justify-center overflow-hidden text-2xl',
-        {
-          'bg-black text-white': !invert,
-          'bg-white text-black': invert,
-        },
-      )}
+      className={cn('fixed inset-0 z-50 flex items-center justify-center overflow-hidden text-2xl')}
     >
       <div className="h-full w-full translate-x-[-44%]">
         {questions?.map(({ question }, index) => (

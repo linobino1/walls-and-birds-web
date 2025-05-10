@@ -3,6 +3,7 @@ import './global.css'
 import { Footer } from '@/components/Footer'
 import { Theme } from '@/components/Theme'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import { FiretruckProvider } from '@/components/Firetruck'
 
 export const metadata = {
   title: 'Walls & Birds',
@@ -16,10 +17,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="font-sans">
         <LivePreviewListener />
-        <Theme>
-          <main className="flex min-h-screen flex-col">{children}</main>
-          <Footer />
-        </Theme>
+        <FiretruckProvider>
+          <Theme>
+            <main className="flex min-h-screen flex-col">{children}</main>
+            <Footer />
+          </Theme>
+        </FiretruckProvider>
       </body>
     </html>
   )

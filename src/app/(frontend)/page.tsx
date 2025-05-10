@@ -4,6 +4,7 @@ import { NewsletterSignup } from '@/components/NewsletterSignup'
 import { getPayload } from '@/util/getPayload'
 import { SocialIcons } from '@/components/SocialIcons'
 import Link from 'next/link'
+import { Scaler } from '@/components/Firetruck/Scaler'
 
 const fetchData = async () => {
   const payload = await getPayload()
@@ -25,7 +26,7 @@ export default async function HomePage() {
   const { shows } = await fetchData()
 
   return (
-    <div className="pink-links flex flex-1 flex-col items-center justify-center gap-[3px] text-center text-xl leading-tight md:gap-4 md:text-2xl">
+    <Scaler className="pink-links flex flex-1 flex-col items-center justify-center gap-[3px] text-center text-xl leading-tight md:gap-4 md:text-2xl">
       <h1 className="font-cooper mt-[5rem] mb-[3rem] cursor-none text-4xl md:text-8xl">
         Walls & Birds
       </h1>
@@ -58,6 +59,6 @@ export default async function HomePage() {
         <Link href="/faq">faq</Link>
         <Link href="/songbook">songbook</Link>
       </nav>
-    </div>
+    </Scaler>
   )
 }

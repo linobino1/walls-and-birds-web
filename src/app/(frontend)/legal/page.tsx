@@ -1,8 +1,19 @@
+'use client'
+
+import { FiretruckContext } from '@/components/Firetruck'
 import { Gutter } from '@/components/Gutter'
+import { cn } from '@/util/cn'
+import { use } from 'react'
 
 export default function Legal() {
+  const { isPlaying } = use(FiretruckContext)
+
   return (
-    <Gutter className="prose pt-12">
+    <Gutter
+      className={cn('prose pt-12', {
+        'prose-invert': isPlaying,
+      })}
+    >
       <h1>Imprint</h1>
       <h2>According to § 5 TMG (Telemediengesetz):</h2>
       <p>
