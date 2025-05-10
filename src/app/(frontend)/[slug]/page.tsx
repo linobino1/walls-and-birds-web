@@ -2,10 +2,13 @@ import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { Gutter } from '@/components/Gutter'
 import { PageTitle } from '@/components/PageTitle'
 import { getPayload } from '@/util/getPayload'
+import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
 const fetchData = async (slug: string) => {
   const payload = await getPayload()
+  const draft = (await draftMode()).isEnabled
+
   const page = (
     await payload.find({
       collection: 'pages',
@@ -15,6 +18,7 @@ const fetchData = async (slug: string) => {
         },
       },
       limit: 1,
+      draft,
     })
   ).docs[0]
 

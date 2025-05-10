@@ -11,6 +11,9 @@ importers:
       '@payloadcms/db-mongodb':
         specifier: 3.37.0
         version: 3.37.0(@aws-sdk/credential-providers@3.806.0)(payload@3.37.0(graphql@16.11.0)(typescript@5.7.3))
+      '@payloadcms/live-preview-react':
+        specifier: ^3.37.0
+        version: 3.37.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@payloadcms/next':
         specifier: 3.37.0
         version: 3.37.0(@types/react@19.1.0)(graphql@16.11.0)(monaco-editor@0.52.2)(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4))(payload@3.37.0(graphql@16.11.0)(typescript@5.7.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)
@@ -1133,6 +1136,15 @@ packages:
     peerDependencies:
       graphql: ^16.8.1
       payload: 3.37.0
+
+  '@payloadcms/live-preview-react@3.37.0':
+    resolution: {integrity: sha512-M4P2a0zhF69y9sGrin3m3+rf38XQmCU6FgarQWZygAez/mgUtujk41ABb3QSx2/zD1BtP2pgKQf65o0OxhUkRQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc-65a56d0e-20241020
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc-65a56d0e-20241020
+
+  '@payloadcms/live-preview@3.37.0':
+    resolution: {integrity: sha512-qeO53dB3FRYKwggZn23rB+6y4MBR1oPmwQ1vIMRN9Nq4r6UMxY3O/KbdHxtLu+udfxISOIDHSKQeQa5JyT9FdA==}
 
   '@payloadcms/next@3.37.0':
     resolution: {integrity: sha512-C8jXKA/+C0DBJgQdL9ZNZ/TLFRwpHx10ne9j0tO1zZZsFkhU+/znZPcYYOpnbOfnuI+l3HNQmZ+Hg6fEJzNtiQ==}
@@ -5634,6 +5646,14 @@ snapshots:
       tsx: 4.19.2
     transitivePeerDependencies:
       - typescript
+
+  '@payloadcms/live-preview-react@3.37.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@payloadcms/live-preview': 3.37.0
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
+  '@payloadcms/live-preview@3.37.0': {}
 
   '@payloadcms/next@3.37.0(@types/react@19.1.0)(graphql@16.11.0)(monaco-editor@0.52.2)(next@15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4))(payload@3.37.0(graphql@16.11.0)(typescript@5.7.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)':
     dependencies:

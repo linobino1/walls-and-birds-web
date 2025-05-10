@@ -6,6 +6,13 @@ import { Gallery } from '@/blocks/Gallery/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
+  versions: {
+    drafts: {
+      autosave: {
+        interval: 500,
+      },
+    },
+  },
   fields: [
     {
       name: 'title',

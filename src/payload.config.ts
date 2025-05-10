@@ -12,6 +12,7 @@ import { Shows } from './collections/Shows'
 import { Faq } from './globals/Faq'
 import { Pages } from './collections/Pages'
 import { defaultLexical } from './seed/util/defaultLexical'
+import { generatePreviewPath } from './util/generatePreviewPath'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,6 +22,11 @@ export default buildConfig({
     user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),
+    },
+    livePreview: {
+      collections: ['pages'],
+      url: ({ collectionConfig, data }) =>
+        generatePreviewPath(`/${collectionConfig?.slug === 'pages' ? (data.slug ?? '') : ''}`),
     },
   },
   collections: [Pages, Shows, Songs, Users, Media],
