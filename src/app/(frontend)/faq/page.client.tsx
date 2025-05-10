@@ -84,7 +84,9 @@ export const FaqClientComponent = ({ questions: _questions }: Props) => {
       tabIndex={0}
       ref={main}
       onKeyDown={onKeyDown}
-      className={cn('fixed inset-0 z-50 flex items-center justify-center overflow-hidden text-2xl')}
+      className={cn(
+        'fixed inset-0 z-50 flex items-center justify-center overflow-hidden text-lg md:text-2xl',
+      )}
     >
       <div className="h-full w-full translate-x-[-44%]">
         {questions?.map(({ question }, index) => (
