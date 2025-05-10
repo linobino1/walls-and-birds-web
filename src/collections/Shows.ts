@@ -1,5 +1,4 @@
 import type { CollectionConfig } from 'payload'
-import { publicReadOnly } from '@/util/access/publicReadOnly'
 import { revalidatePath } from '@/util/revalidate'
 
 export const Shows: CollectionConfig = {
@@ -7,7 +6,6 @@ export const Shows: CollectionConfig = {
   admin: {
     defaultColumns: ['date', 'location'],
   },
-  access: publicReadOnly,
   hooks: {
     afterChange: [
       async () => {

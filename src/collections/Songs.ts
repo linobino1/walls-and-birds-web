@@ -1,6 +1,5 @@
 import type { CollectionConfig } from 'payload'
 import { slugField } from '@/fields/slug'
-import { publicReadOnly } from '@/util/access/publicReadOnly'
 import { revalidatePath } from '@/util/revalidate'
 
 export const Songs: CollectionConfig = {
@@ -9,7 +8,6 @@ export const Songs: CollectionConfig = {
     defaultColumns: ['title', 'updatedAt'],
     listSearchableFields: ['title', 'content'],
   },
-  access: publicReadOnly,
   hooks: {
     afterChange: [
       async ({ doc }) => {
