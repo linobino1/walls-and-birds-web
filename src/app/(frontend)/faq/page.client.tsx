@@ -24,24 +24,24 @@ const Question: React.FC<{ question: string; isActive: boolean }> = ({ question,
   return (
     <div
       className={cn(
-        'absolute w-[90vw] text-center whitespace-pre-wrap transition-transform duration-500',
+        'absolute w-[90vw] origin-center text-center text-balance whitespace-pre-wrap transition-transform duration-500',
         {
           'text-[3px]': !isActive,
         },
       )}
       style={{
         transform: isActive
-          ? 'translate(50vw,50vh) scaleX(1)'
+          ? 'translate(50vw, calc(50vh - 50%)) scaleX(1)'
           : `translate(${position.x}vw, ${position.y}vh) scaleX(0.1)`,
       }}
     >
       <div
-        className={cn('inline p-2 transition-colors duration-500', {
+        className={cn('inline py-2 transition-colors duration-500', {
           'bg-transparent': !isActive,
           'bg-black': isActive,
         })}
       >
-        {question}
+        {question.trim()}
       </div>
     </div>
   )
