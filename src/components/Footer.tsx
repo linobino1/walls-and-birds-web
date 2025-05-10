@@ -12,10 +12,10 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {}
 export const Footer = ({ className, ...props }: Props) => {
   const pathname = usePathname()
   const { isPlaying } = use(FiretruckContext)
-  return (
+  return pathname === '/faq' ? null : (
     <footer
       className={cn(
-        'z-10 mt-16 flex w-full justify-center gap-4 p-4 font-serif text-xs transition-colors md:justify-end',
+        'z-10 mt-16 flex w-full items-center gap-y-2 p-4 font-serif text-xs transition-colors max-md:flex-col-reverse md:justify-between',
         {
           'text-neutral-400': !isPlaying,
         },
@@ -23,10 +23,17 @@ export const Footer = ({ className, ...props }: Props) => {
       )}
       {...props}
     >
-      <div>© {new Date().getFullYear()} Walls & Birds</div>
-      <Link href="/legal">legal notice</Link>
-      <FiretruckToggle />
-      {pathname === '/' ? <Link href="/past-shows">past shows</Link> : <Link href="/">home</Link>}
+      <div className="flex gap-4">
+        <div>© {new Date().getFullYear()} Walls & Birds</div>
+        <Link href="/legal">legal notice</Link>
+      </div>
+      <div className="flex gap-4">
+        <Link href="/faq">faq</Link>
+        {pathname !== '/' && <Link href="/">home</Link>}
+        <Link href="/songbook">songbook</Link>
+        {pathname === '/' && <Link href="/past-shows">past shows</Link>}
+        <FiretruckToggle />
+      </div>
     </footer>
   )
 }

@@ -55,9 +55,8 @@ export default async function HomePage() {
       <Spacer />
 
       <nav className="flex flex-col gap-[8px] leading-tight">
+        <Link href="/about">about</Link>
         <a href="mailto:judy@wallsandbirds.com">contact</a>
-        <Link href="/faq">faq</Link>
-        <Link href="/songbook">songbook</Link>
       </nav>
     </Scaler>
   )
