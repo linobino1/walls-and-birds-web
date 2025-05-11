@@ -43,6 +43,7 @@ const qualities = [
   '6/9',
   'sus2',
   'sus4',
+  '/',
 ]
 
 /**
@@ -82,7 +83,7 @@ export const transposeMap: Record<string, string> = allChords.reduce(
 )
 
 export function transposeChord(chord: string, steps: number) {
-  steps = steps % 12
+  steps = (steps + 12) % 12
   while (steps > 0) {
     if (!(chord in transposeMap)) throw new Error(`chord ${chord} not found`)
     chord = transposeMap[chord] as string
