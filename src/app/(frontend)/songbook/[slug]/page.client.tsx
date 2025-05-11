@@ -29,10 +29,10 @@ export const SongClientComponent = ({ song }: Props) => {
   return (
     <div className="flex justify-center overflow-hidden text-left font-mono text-base tracking-[-1px]">
       <div className="overflow-x-auto">
-        <h2 className="text-2xl font-bold">
-          {song.by} - {song.title}
+        <h2 className="text-xl font-bold">
+          {song.by === 'Walls & Birds' ? song.title : `${song.by} - ${song.title}`}
         </h2>
-        <p className="my-2">
+        <p className="my-1">
           tom:{' '}
           <button onClick={() => transpose(-1)} className="cursor-pointer">
             -
