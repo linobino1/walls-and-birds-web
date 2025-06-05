@@ -4,11 +4,13 @@ import { RawHTML } from '@/blocks/RawHTML/config'
 import { slugField } from '@/fields/slug'
 import { Gallery } from '@/blocks/Gallery/config'
 import { revalidatePath } from '@/util/revalidate'
+import { generatePreviewPath } from '@/util/generatePreviewPath'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   admin: {
     useAsTitle: 'title',
+    preview: ({ slug }) => generatePreviewPath(`/${slug}`),
   },
   versions: {
     drafts: {
