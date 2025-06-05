@@ -9,7 +9,7 @@ type Props = React.ComponentProps<'h1'> & {
 
 export const PageTitle = ({ link, lines, className, ...props }: Props) => {
   const inner = (
-    <h1 className={cn('font-cooper mt-16 mb-12 text-4xl', className)} {...props}>
+    <h1 className={cn('font-cooper mt-16 mb-12 text-center text-4xl', className)} {...props}>
       {lines.map((line, index) => (
         <div key={index}>{line}</div>
       ))}

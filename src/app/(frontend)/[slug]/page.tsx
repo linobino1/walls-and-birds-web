@@ -50,7 +50,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { blocks, hero } = await fetchData(slug)
 
   return (
-    <div className="text-center">
+    <div>
       {hero === 'heading' && (
         <Gutter>
           <PageTitle lines={['Walls & Birds']} link={{ href: '/' }} />
