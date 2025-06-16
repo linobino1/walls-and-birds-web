@@ -60,9 +60,9 @@ html {
 a {
   transition: text-decoration 0.4s;
 }
+.pink-links a {
+  padding-inline: 2px;
+}
 .pink-links a:hover {
-  text-decoration: underline;
-  text-decoration-color: darkorchid;
-  text-underline-offset: 0.4em;
-  text-decoration-thickness: 0.2em;
+  background-color: darkorchid;
 }

@@ -12,7 +12,7 @@ export interface Props extends React.HTMLAttributes<HTMLUListElement> {
 }
 
 export const Shows: React.FC<Props> = ({ shows, liClassName, className, ...props }) => (
-  <ul {...props} className={cn('', className)}>
+  <ul {...props} className={cn('flex flex-col gap-2', className)}>
     {shows.totalDocs > 0 ? (
       shows.docs.map((show, i) => <LI key={i} show={show} className={liClassName} />)
     ) : (
