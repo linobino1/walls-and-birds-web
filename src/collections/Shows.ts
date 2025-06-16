@@ -6,6 +6,7 @@ export const Shows: CollectionConfig = {
   admin: {
     defaultColumns: ['date', 'location'],
   },
+  defaultSort: '-date',
   hooks: {
     afterChange: [
       async () => {
