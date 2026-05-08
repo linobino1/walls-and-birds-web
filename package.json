@@ -14,22 +14,22 @@
     "seed": "cross-env SEED=true dotenv tsx ./src/seed/run.ts"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "3.66.0",
-    "@payloadcms/live-preview-react": "^3.66.0",
-    "@payloadcms/next": "3.66.0",
-    "@payloadcms/richtext-lexical": "3.66.0",
-    "@payloadcms/storage-s3": "3.66.0",
-    "@payloadcms/ui": "3.66.0",
+    "@payloadcms/db-mongodb": "3.84.1",
+    "@payloadcms/live-preview-react": "^3.84.1",
+    "@payloadcms/next": "3.84.1",
+    "@payloadcms/richtext-lexical": "3.84.1",
+    "@payloadcms/storage-s3": "3.84.1",
+    "@payloadcms/ui": "3.84.1",
     "@tailwindcss/postcss": "^4.1.6",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "graphql": "^16.8.1",
-    "next": "15.5.7",
-    "payload": "3.66.0",
+    "next": "16.2.6",
+    "payload": "3.84.1",
     "postcss": "^8.5.3",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-slick": "^0.30.3",
     "react-turnstile": "^1.1.4",
     "sharp": "0.32.6",
@@ -42,8 +42,8 @@
     "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.5.4",
-    "@types/react": "19.2.1",
-    "@types/react-dom": "19.2.1",
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.3",
     "@types/react-slick": "^0.23.13",
     "dotenv-cli": "^8.0.0",
     "eslint": "^9.16.0",
@@ -55,13 +55,12 @@
     "typescript": "5.7.3"
   },
   "engines": {
-    "node": "^18.20.2 || >=20.9.0",
-    "pnpm": "^9 || ^10"
+    "node": "^18.20.2 || >=20.9.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+  "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912"
 }
