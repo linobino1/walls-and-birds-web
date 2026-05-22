@@ -15,6 +15,7 @@ const Question: React.FC<{ question: string; isActive: boolean }> = ({ question,
 
   // initialize random position
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPosition({
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -57,6 +58,7 @@ export const FaqClientComponent = ({ questions: _questions }: Props) => {
   useEffect(() => {
     const shuffledQuestions = [..._questions]
     shuffleArray(shuffledQuestions)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setQuestions(shuffledQuestions)
   }, [_questions])
 
