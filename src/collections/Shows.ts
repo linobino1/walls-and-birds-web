@@ -14,6 +14,12 @@ export const Shows: CollectionConfig = {
         revalidatePath('/past-shows')
       },
     ],
+    afterDelete: [
+      async () => {
+        revalidatePath('/')
+        revalidatePath('/past-shows')
+      },
+    ],
   },
   fields: [
     {
