@@ -12,9 +12,14 @@ const fetchData = async () => {
     collection: 'shows',
     sort: 'date',
     where: {
-      date: {
-        greater_than_equal: new Date(),
-      },
+      and: [
+        {
+          date: {
+            greater_than_equal: new Date(),
+          },
+          hidden: { not_equals: true },
+        },
+      ],
     },
   })
   return { shows }

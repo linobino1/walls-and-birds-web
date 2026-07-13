@@ -41,5 +41,13 @@ export const Shows: CollectionConfig = {
       type: 'text',
       required: false,
     },
+    {
+      name: 'hidden',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 }

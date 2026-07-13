@@ -219,6 +219,7 @@ export interface Show {
   date: string;
   location?: string | null;
   link?: string | null;
+  hidden?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -409,6 +410,7 @@ export interface ShowsSelect<T extends boolean = true> {
   date?: T;
   location?: T;
   link?: T;
+  hidden?: T;
   updatedAt?: T;
   createdAt?: T;
 }
