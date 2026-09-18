@@ -1,10 +1,9 @@
 'use client'
 
-import { useActionState, useEffect, useState } from 'react'
+import { useActionState, useState } from 'react'
 import Turnstile from 'react-turnstile'
 import { signup } from './actions/signup'
 import { cn } from '@/util/cn'
-import { listmonkWakeUp } from './actions/listmonkWakeUp'
 
 export const NewsletterSignup = () => {
   if (!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
@@ -13,17 +12,6 @@ export const NewsletterSignup = () => {
 
   const [isActive, setIsActive] = useState(false)
   const [captchaState, setCaptchaState] = useState<'checking' | 'verified' | 'error'>('checking')
-  const [triggeredWakeUp, setTriggeredWakeUp] = useState(false)
-
-  // wake up listmonk when the user interacts with the form
-  useEffect(() => {
-    if (!triggeredWakeUp && isActive) {
-      listmonkWakeUp().then(() => {
-        setTriggeredWakeUp(true)
-      })
-    }
-  }, [isActive, triggeredWakeUp])
-
   const [state, formAction, pending] = useActionState(signup, {})
 
   return (
