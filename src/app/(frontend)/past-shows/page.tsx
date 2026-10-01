@@ -14,9 +14,14 @@ const fetchData = async () => {
     sort: '-date',
     pagination: false,
     where: {
-      date: {
-        less_than: today,
-      },
+      and: [
+        {
+          date: {
+            less_than: today,
+          },
+          hidden: { not_equals: true },
+        },
+      ],
     },
   })
 
