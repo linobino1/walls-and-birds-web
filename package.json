@@ -32,7 +32,7 @@
     "react-slick": "^0.31.0",
     "react-turnstile": "^1.1.5",
     "sharp": "^0.35.5",
-    "slick-carousel": "^1.8.1",
+    "slick-carousel": "^2.0.0",
     "slugify": "^1.6.9",
     "tailwind-merge": "^3.7.0",
     "tailwindcss": "^4.3.3"
@@ -52,5 +52,5 @@
     "tsx": "^4.23.15",
     "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@11.2.2+sha512.36e6621fad506178936455e70247b8808ef4ec25797a9f437a93281a020484e2607f6a469a22e982987c3dbb8866e3071514ab10a4a1749e06edcd1ec118436f"
+  "packageManager": "pnpm@12.8.1+sha512.f64ba907507f5ceafe06c8d38e6052d0179444580ec1279ddd5bfc11cb48aa8a2644b66598e07e761da84872a9fc57d5f902b87fa49d024198d558612aabbe45"
 }
