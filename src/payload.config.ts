@@ -68,7 +68,8 @@ export default buildConfig({
         },
         region: process.env.S3_REGION,
       },
-      clientUploads: true,
+      // disabled clientUploads until this is fixed: https://github.com/payloadcms/payload/issues/15910
+      clientUploads: false,
     }),
   ],
 })
